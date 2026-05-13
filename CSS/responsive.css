@@ -1,0 +1,70 @@
+@media (max-width: 992px) {
+
+  .grid-4,
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .navbar-container {
+    height: 80px;
+  }
+
+  .hero {
+    min-height: 85vh;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .room-card img {
+    height: 220px;
+  }
+}

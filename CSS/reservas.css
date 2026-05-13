@@ -1,0 +1,36 @@
+.booking-section {
+  padding: 8rem 0;
+}
+
+.booking-card {
+  padding: 3rem;
+
+  border-radius: var(--radius-xl);
+
+  background: rgba(255,255,255,0.04);
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid var(--color-border);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.booking-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.booking-summary {
+  padding: 2rem;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--color-deep);
+}
+
+.price-highlight {
+  color: var(--color-gold);
+  font-size: 2rem;
+  font-weight: bold;
+}

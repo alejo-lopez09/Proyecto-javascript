@@ -1,0 +1,33 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 280px;
+
+  background: #08101f;
+
+  border-right: 1px solid var(--color-border);
+
+  padding: 2rem;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 3rem;
+}
+
+.admin-card {
+  padding: 2rem;
+
+  background: var(--color-deep);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+}
+
+.admin-table {
+  overflow-x: auto;
+}
