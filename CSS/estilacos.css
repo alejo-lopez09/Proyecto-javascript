@@ -1,9 +1,10 @@
 :root {
 
 
-  --color-midnight: #0B132B;
+  --color-midnight: #0f1c41;
+  --color-top: #0B132B;
   --color-deep: #1C2541;
-  --color-gold: #D4A373;
+  --color-gold: #E8B34B;
   --color-smoke: #F8F9FA;
 
   
@@ -282,10 +283,16 @@ p {
   font-weight: 600;
 }
 
+
 .btn-primary {
   background: var(--color-gold);
   color: var(--color-midnight);
-  box-shadow: var(--shadow-gold);
+
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.25),
+    inset 0 -2px 6px rgba(0,0,0,0.18),
+    0 8px 20px rgba(212,163,115,0.18);
+
 }
 
 .btn-primary:hover {
@@ -306,7 +313,7 @@ p {
 
 
 .navbar {
-  position: fixed;
+  
   width: 100%;
   top: 0;
   z-index: 999;
@@ -395,7 +402,7 @@ p {
 }
 
 .room-card img {
-  height: 260px;
+  height: 300px;
   object-fit: cover;
 }
 
