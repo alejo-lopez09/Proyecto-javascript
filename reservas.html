@@ -1,13 +1,645 @@
-<!-- ✅ Ingresa fechas
-✅ Cantidad de personas
-✅ Ve habitaciones disponibles
-✅ Reserva habitaciones
-✅ Cancela reservas
+<!DOCTYPE html>
+<html lang="es">
 
-Debe mostrar:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-precio
-camas
-personas máximas
-servicios
-disponibilidad -->
+    <title>Reservas | Hotel El Rincón del Carmen</title>
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/estilacos.css">
+    <link rel="stylesheet" href="CSS/admin.css">
+    <link rel="stylesheet" href="CSS/reservas.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+</head>
+
+<body>
+
+    <!-- ======================================================
+         NAVBAR
+    ======================================================= -->
+
+    <header class="navbar">
+
+        <div class="container navbar-container flex-between">
+
+            <a href="index.html" class="logo">
+                <h3>El Rincón del Carmen</h3>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="reservas.html">Reservas</a>
+                    </li>
+
+                    <li>
+                        <a href="contacto.html">Contacto</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ======================================================
+         HERO RESERVAS
+    ======================================================= -->
+
+    <section class="booking-hero">
+
+        <div class="container">
+
+            <div class="booking-hero-content fade-up">
+
+                <span class="badge mb-1">
+                    Reserva tu experiencia
+                </span>
+
+                <h1 class="mb-2">
+                    Habitaciones premium para una estadía inolvidable
+                </h1>
+
+                <p class="mb-3">
+                    Consulta disponibilidad, explora nuestras habitaciones y reserva fácilmente desde cualquier dispositivo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================================
+         FORMULARIO DE BÚSQUEDA
+    ======================================================= -->
+
+    <section class="booking-section">
+
+        <div class="container">
+
+            <div class="booking-card glass">
+
+                <div class="section-title mb-3">
+
+                    <h2 class="mb-1">
+                        Consulta disponibilidad
+                    </h2>
+
+                    <p>
+                        Selecciona las fechas y la cantidad de huéspedes.
+                    </p>
+
+                </div>
+
+                <form class="booking-form">
+
+                    <!-- Fecha entrada -->
+
+                    <div class="form-group">
+
+                        <label for="checkin">
+                            Fecha de entrada
+                        </label>
+
+                        <input
+                            type="date"
+                            id="checkin"
+                            class="input"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Fecha salida -->
+
+                    <div class="form-group">
+
+                        <label for="checkout">
+                            Fecha de salida
+                        </label>
+
+                        <input
+                            type="date"
+                            id="checkout"
+                            class="input"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Personas -->
+
+                    <div class="form-group">
+
+                        <label for="guests">
+                            Número de personas
+                        </label>
+
+                        <select
+                            id="guests"
+                            class="input"
+                            required
+                        >
+
+                            <option value="">
+                                Selecciona
+                            </option>
+
+                            <option value="1">
+                                1 Persona
+                            </option>
+
+                            <option value="2">
+                                2 Personas
+                            </option>
+
+                            <option value="3">
+                                3 Personas
+                            </option>
+
+                            <option value="4">
+                                4 Personas
+                            </option>
+
+                            <option value="5">
+                                5 Personas
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Botón -->
+                    
+                    
+                    <button
+                        type="submit"
+                        class="btn btn-primary search-btn"
+                    >
+                        Buscar habitaciones
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================================
+         RESULTADOS HABITACIONES
+    ======================================================= -->
+
+    <section class="rooms-results section">
+
+        <div class="container">
+
+            <div class="section-title mb-3">
+
+                <h2 class="mb-1">
+                    Habitaciones disponibles
+                </h2>
+
+                <p>
+                    Espacios diseñados para descanso, confort y exclusividad.
+                </p>
+
+            </div>
+
+            <!-- GRID -->
+
+            <div class="rooms-grid grid grid-3">
+
+                <!-- ======================================================
+                     HABITACIÓN 1
+                ======================================================= -->
+
+                <article class="room-card">
+
+                    <img
+                        src="img/Gemini_Generated_Image_coh4xzcoh4xzcoh4.png"
+                        alt="Habitación Deluxe"
+                    >
+
+                    <div class="room-card-content">
+
+                        <div class="room-top flex-between mb-2">
+
+                            <h3>
+                                Habitación Deluxe
+                            </h3>
+
+                            <span class="badge">
+                                Disponible
+                            </span>
+
+                        </div>
+
+                        <p class="mb-2">
+                            Elegancia y comodidad con una vista relajante y acabados premium.
+                        </p>
+
+                        <!-- Servicios -->
+
+                        <div class="room-services mb-2">
+
+                            <span class="service-tag">
+                                WiFi
+                            </span>
+
+                            <span class="service-tag">
+                                Minibar
+                            </span>
+
+                            <span class="service-tag">
+                                Jacuzzi
+                            </span>
+
+                            <span class="service-tag">
+                                Smart TV
+                            </span>
+
+                        </div>
+
+                        <!-- Datos -->
+
+                        <div class="room-info mb-2">
+
+                            <div class="info-item">
+                                <strong>
+                                    Camas:
+                                </strong>
+                                2
+                            </div>
+
+                            <div class="info-item">
+                                <strong>
+                                    Personas:
+                                </strong>
+                                4
+                            </div>
+
+                            <div class="info-item">
+                                <strong>
+                                    Fechas:
+                                </strong>
+                                Disponible
+                            </div>
+
+                        </div>
+
+                        <!-- Precio -->
+
+                        <div class="room-bottom flex-between">
+
+                            <div>
+
+                                <small>
+                                    Desde
+                                </small>
+
+                                <h3 class="price-highlight">
+                                    $320.000
+                                </h3>
+
+                                <small>
+                                    por noche
+                                </small>
+
+                            </div>
+                        
+                            <button class="btn btn-primary">
+                                Reservar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- ======================================================
+                     HABITACIÓN 2
+                ======================================================= -->
+
+                <article class="room-card">
+
+                    <img
+                        src="img/Suite.png"
+                        alt="Suite Premium"
+                    >
+
+                    <div class="room-card-content">
+
+                        <div class="room-top flex-between mb-2">
+
+                            <h3>
+                                Suite Premium
+                            </h3>
+
+                            <span class="badge">
+                                Disponible
+                            </span>
+
+                        </div>
+
+                        <p class="mb-2">
+                            Suite espaciosa con acabados modernos y experiencia de lujo.
+                        </p>
+
+                        <div class="room-services mb-2">
+
+                            <span class="service-tag">
+                                WiFi
+                            </span>
+
+                            <span class="service-tag">
+                                Jacuzzi
+                            </span>
+
+                            <span class="service-tag">
+                                Balcón
+                            </span>
+
+                            <span class="service-tag">
+                                Room Service
+                            </span>
+
+                        </div>
+
+                        <div class="room-info mb-2">
+
+                            <div class="info-item">
+                                <strong>
+                                    Camas:
+                                </strong>
+                                3
+                            </div>
+
+                            <div class="info-item">
+                                <strong>
+                                    Personas:
+                                </strong>
+                                5
+                            </div>
+
+                            <div class="info-item">
+                                <strong>
+                                    Fechas:
+                                </strong>
+                                Disponible
+                            </div>
+
+                        </div>
+
+                        <div class="room-bottom flex-between">
+
+                            <div>
+
+                                <small>
+                                    Desde
+                                </small>
+
+                                <h3 class="price-highlight">
+                                    $480.000
+                                </h3>
+
+                                <small>
+                                    por noche
+                                </small>
+
+                            </div>
+
+                            <button class="btn btn-primary">
+                                Reservar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- ======================================================
+                     HABITACIÓN 3
+                ======================================================= -->
+
+                <article class="room-card">
+
+                    <img
+                        src="img/Habitacion familiar.png"
+                        alt="Habitación Familiar"
+                    >
+
+                    <div class="room-card-content">
+
+                        <div class="room-top flex-between mb-2">
+
+                            <h3>
+                                Habitación Familiar
+                            </h3>
+
+                            <span class="badge">
+                                Disponible
+                            </span>
+
+                        </div>
+
+                        <p class="mb-2">
+                            Ideal para grupos y familias que buscan comodidad y tranquilidad.
+                        </p>
+
+                        <div class="room-services mb-2">
+
+                            <span class="service-tag">
+                                WiFi
+                            </span>
+
+                            <span class="service-tag">
+                                TV
+                            </span>
+
+                            <span class="service-tag">
+                                Desayuno
+                            </span>
+
+                            <span class="service-tag">
+                                Aire acondicionado
+                            </span>
+
+                        </div>
+
+                        <div class="room-info mb-2">
+
+                            <div class="info-item">
+                                <strong>
+                                    Camas:
+                                </strong>
+                                4
+                            </div>
+
+                            <div class="info-item">
+                                <strong>
+                                    Personas:
+                                </strong>
+                                6
+                            </div>
+
+                            <div class="info-item">
+                                <strong>
+                                    Fechas:
+                                </strong>
+                                Disponible
+                            </div>
+
+                        </div>
+
+                        <div class="room-bottom flex-between">
+
+                            <div>
+
+                                <small>
+                                    Desde
+                                </small>
+
+                                <h3 class="price-highlight">
+                                    $540.000
+                                </h3>
+
+                                <small>
+                                    por noche
+                                </small>
+
+                            </div>
+
+                            <button class="btn btn-primary">
+                                Reservar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================================
+         FOOTER
+    ======================================================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="grid grid-3">
+
+                <!-- Marca -->
+
+                <div>
+
+                    <h3 class="mb-2">
+                        El Rincón del Carmen
+                    </h3>
+
+                    <p>
+                        Experiencias premium, descanso y comodidad en un ambiente elegante y acogedor.
+                    </p>
+
+                </div>
+
+                <!-- Navegación -->
+
+                <div>
+
+                    <h4 class="mb-2">
+                        Navegación
+                    </h4>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="index.html">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="reservas.html">
+                                Reservas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contacto.html">
+                                Contacto
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Contacto -->
+
+                <div>
+
+                    <h4 class="mb-2">
+                        Contacto
+                    </h4>
+
+                    <p>
+                        +57 300 000 0000
+                    </p>
+
+                    <p>
+                        contacto@rincondelcarmen.com
+                    </p>
+
+                    <p>
+                        Norte de Santander, Colombia
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Hotel El Rincón del Carmen. Todos los derechos reservados.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JS -->
+
+    <script src="./js/reservas.js"></script>
+
+</body>
+
+</html>
