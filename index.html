@@ -10,21 +10,237 @@
 ✅ Galería
 ✅ Footer -->
 
+# index.html
+
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hotelRincónDelCarmen</title>
-    <script src="JS/Script.js" defer></script>
-    <link rel="stylesheet" href="CSS/admin.css">
-    <link rel="stylesheet" href="CSS/estilacos.css">
-    <link rel="stylesheet" href="CSS/reservas.css">
-    <link rel="stylesheet" href="CSS/responsive.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Rincón del Carmen</title>
+
+    <link rel="stylesheet" href="./CSS/estilacos.css" />
+    <link rel="stylesheet" href="./CSS/responsive.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="" alt="">
+    <header class="header">
+        <nav class="navbar">
+        <div class="logo">
+            <h2>Rincón del Carmen</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="login.html">Iniciar sesión</a></li>
+        </ul>
+        </nav>
+
+        <section class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Descansa con lujo y comodidad</h1>
+
+            <p>
+            Vive una experiencia inolvidable en el Hotel Rincón del Carmen.
+            Habitaciones modernas, spa, restaurante y zonas húmedas.
+            </p>
+
+            <a href="reservas.html" class="btn-primary">
+            Reservar ahora
+            </a>
+        </div>
+        </section>
     </header>
+
+
+    <section class="services">
+        <div class="section-title">
+        <h2>Nuestros Servicios</h2>
+        <p>Disfruta de instalaciones diseñadas para tu comodidad.</p>
+        </div>
+
+        <div class="services-container">
+
+        <article class="service-card">
+            <img src="./IMG/comidas/comida1.jpg" alt="Restaurante" />
+
+            <div class="service-content">
+            <h3>Restaurante Gourmet</h3>
+            <p>
+                Disfruta de platos nacionales e internacionales preparados por chefs expertos.
+            </p>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <img src="./IMG/spa/spa1.jpg" alt="Spa" />
+
+            <div class="service-content">
+            <h3>Spa & Relax</h3>
+            <p>
+                Espacios de relajación con masajes, jacuzzi y tratamientos especiales.
+            </p>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <img src="./IMG/hotel/piscina.jpg" alt="Piscina" />
+
+            <div class="service-content">
+            <h3>Zonas Húmedas</h3>
+            <p>
+                Piscina, sauna y espacios recreativos para disfrutar en familia.
+            </p>
+            </div>
+        </article>
+
+        </div>
+    </section>
+
+
+
+    <section class="rooms">
+
+        <div class="section-title">
+        <h2>Habitaciones Destacadas</h2>
+        <p>Conoce algunas de nuestras habitaciones más reservadas.</p>
+        </div>
+
+        <div class="rooms-container">
+
+        <article class="room-card">
+            <img src="./IMG/habitaciones/habitacion1.jpg" alt="Habitación Premium">
+
+            <div class="room-content">
+            <h3>Suite Premium</h3>
+
+            <p>
+                Cama king size, jacuzzi privado, minibar y vista panorámica.
+            </p>
+
+            <span>$250.000 / noche</span>
+
+            <a href="reservas.html" class="btn-secondary">
+                Ver disponibilidad
+            </a>
+            </div>
+        </article>
+
+
+        <article class="room-card">
+            <img src="./IMG/habitaciones/habitacion2.jpg" alt="Habitación Familiar">
+
+            <div class="room-content">
+            <h3>Habitación Familiar</h3>
+
+            <p>
+                Espacios amplios ideales para grupos y familias.
+            </p>
+
+            <span>$320.000 / noche</span>
+
+            <a href="reservas.html" class="btn-secondary">
+                Ver disponibilidad
+            </a>
+            </div>
+        </article>
+
+
+        <article class="room-card">
+            <img src="./IMG/habitaciones/habitacion3.jpg" alt="Habitación Deluxe">
+
+            <div class="room-content">
+            <h3>Habitación Deluxe</h3>
+
+            <p>
+                Diseño elegante, internet de alta velocidad y minibar incluido.
+            </p>
+
+            <span>$180.000 / noche</span>
+
+            <a href="reservas.html" class="btn-secondary">
+                Ver disponibilidad
+            </a>
+            </div>
+        </article>
+
+        </div>
+    </section>
+
+
+
+    <section class="gallery">
+
+        <div class="section-title">
+            <h2>Galería</h2>
+            <p>Explora nuestros espacios.</p>
+        </div>
+
+        <div class="gallery-container">
+            <img src="./IMG/hotel/hotel1.jpg" alt="Hotel">
+            <img src="./IMG/hotel/hotel2.jpg" alt="Hotel">
+            <img src="./IMG/hotel/hotel3.jpg" alt="Hotel">
+            <img src="./IMG/hotel/hotel4.jpg" alt="Hotel">
+        </div>
+
+    </section>
+
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>¿Listo para reservar?</h2>
+
+            <p>
+                Vive una experiencia inolvidable con nosotros.
+            </p>
+
+            <a href="reservas.html" class="btn-primary">
+                Reservar habitación
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+                <h3>Hotel Rincón del Carmen</h3>
+                <p>
+                Tu mejor experiencia de descanso y comodidad.
+                </p>
+            </div>
+
+            <div>
+                <h4>Enlaces</h4>
+
+                <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h4>Contacto</h4>
+
+                <p>Email: hotelrincon@gmail.com</p>
+                <p>Tel: 321 226 0838</p>
+                <p>Cúcuta - Colombia</p>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
 </html>
+
