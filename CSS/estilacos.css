@@ -369,7 +369,7 @@ p {
 
   background:
     linear-gradient(var(--color-overlay), var(--color-overlay)),
-    url('../img/hotel-hero.jpg') center/cover no-repeat;
+    url('../img/hotel/LATERAL.png') center/cover no-repeat;
 }
 
 .hero-content {
@@ -555,6 +555,7 @@ p {
   background: #080d1d;
 
   border-top: 1px solid var(--color-border);
+  text-align: center;
 }
 
 .footer-bottom {
@@ -608,3 +609,5 @@ p {
   height: 250px;
   object-fit: cover;
 }
+
+
