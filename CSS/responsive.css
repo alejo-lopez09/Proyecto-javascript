@@ -68,3 +68,15 @@
     height: 220px;
   }
 }
+
+@media (min-width: 768px) {
+  .slides img {
+    height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slides img {
+    height: 500px;
+  }
+}
