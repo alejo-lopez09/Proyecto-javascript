@@ -611,3 +611,236 @@ p {
 }
 
 
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-section {
+
+  padding: 5rem 0;
+
+  background:
+      linear-gradient(
+          135deg,
+          var(--color-midnight) 0%,
+          var(--color-midnight) 62%,
+          var(--color-deep) 62%,
+          var(--color-deep) 100%
+      );
+
+}
+
+
+/* =========================================
+ CONTACT CONTAINER
+========================================= */
+
+.contact-container {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2rem;
+
+}
+
+
+/* =========================================
+ CARDS
+========================================= */
+
+.contact-cards {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1rem;
+
+  order: 1;
+
+}
+
+
+.contact-card {
+
+  min-height: 220px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid var(--glass-border);
+
+  background: var(--glass-bg);
+
+  backdrop-filter: blur(12px);
+
+  text-align: center;
+
+  transition: var(--transition-normal);
+
+}
+
+
+.contact-card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow: var(--shadow-md);
+
+}
+
+
+.contact-icon {
+
+  font-size: 2rem;
+
+  margin-bottom: 1rem;
+
+}
+
+
+.contact-card h3 {
+
+  margin-bottom: 0.8rem;
+
+  font-size: 1.4rem;
+
+}
+
+
+.contact-card p {
+
+  color: var(--color-text-muted);
+
+  font-size: 0.95rem;
+
+}
+
+
+/* =========================================
+ FORM
+========================================= */
+
+.contact-form-wrapper {
+
+  padding: 2rem;
+
+  border-radius: var(--radius-lg);
+
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(14px);
+
+  order: 2;
+
+}
+
+
+.contact-form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+}
+
+
+.contact-form textarea {
+
+  resize: none;
+
+  min-height: 160px;
+
+}
+
+
+/* =========================================
+ MAP
+========================================= */
+
+.map-wrapper {
+
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+
+  border: 1px solid var(--glass-border);
+
+  box-shadow: var(--shadow-md);
+
+}
+
+
+/* =========================================
+ TABLET
+========================================= */
+
+@media (min-width: 768px) {
+
+  .contact-cards {
+
+      gap: 1.5rem;
+
+  }
+
+}
+
+
+/* =========================================
+ DESKTOP
+========================================= */
+
+@media (min-width: 1024px) {
+
+  .contact-section {
+
+      background: var(--color-midnight);
+
+  }
+
+  .contact-container {
+
+      flex-direction: row;
+
+      align-items: center;
+
+      gap: 4rem;
+
+  }
+
+
+  .contact-cards {
+
+      width: 40%;
+
+      z-index: 2;
+
+  }
+
+
+  .contact-form-wrapper {
+
+      width: 50%;
+
+      padding: 4rem;
+
+      margin-left: -2rem;
+      margin-right: -2 rem;
+
+
+
+
+  }
+
+}
