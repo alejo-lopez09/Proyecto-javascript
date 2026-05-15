@@ -1,12 +1,269 @@
-<!-- Registro de usuarios.
+<!DOCTYPE html>
+<html lang="es">
 
-Campos obligatorios:
+<head>
 
-identificación
-nombre completo
-nacionalidad
-email
-teléfono
-contraseña
+    <meta charset="UTF-8">
 
-TODO se guarda en localStorage. -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Registro | Hotel El Rincón del Carmen
+    </title>
+
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    
+
+    <link rel="stylesheet" href="CSS/estilacos.css">
+    <link rel="stylesheet" href="CSS/admin.css">
+    <link rel="stylesheet" href="CSS/reservas.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+
+</head>
+
+<body>
+
+    
+
+    <header class="navbar">
+
+        <div class="container navbar-container flex-between">
+
+            <a href="./index.html">
+
+                <h3>
+                    El Rincón del Carmen
+                </h3>
+
+            </a>
+
+            <nav>
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="./index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./reservas.html">
+                            Reservas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="booking-hero">
+
+        <div class="container">
+
+            <div class="booking-hero-content fade-up">
+
+                <span class="badge mb-1">
+                    Registro de huéspedes
+                </span>
+
+                <h1 class="mb-2">
+                    Crea tu cuenta y administra tus reservas
+                </h1>
+
+                <p class="mb-3">
+                    Regístrate para acceder a nuestras habitaciones premium y gestionar tus reservas de forma rápida y segura.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         FORMULARIO
+    ========================================== -->
+
+    <section class="booking-section">
+
+        <div class="container-sm">
+
+            <div class="booking-card glass">
+
+                <div class="section-title mb-3">
+
+                    <h2 class="mb-1">
+                        Crear cuenta
+                    </h2>
+
+                    <p>
+                        Completa la información solicitada.
+                    </p>
+
+                </div>
+
+                <form
+                    id="registroForm"
+                    class="booking-form"
+                >
+
+                    <!-- IDENTIFICACIÓN -->
+
+                    <div class="form-group">
+
+                        <label for="identificacion">
+                            Número de identificación
+                        </label>
+
+                        <input
+                            type="text"
+                            id="identificacion"
+                            class="input"
+                            placeholder="Ej: 1098765432"
+                            required
+                        >
+
+                    </div>
+
+            
+
+                    <div class="form-group">
+
+                        <label for="nombre">
+                            Nombre completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            class="input"
+                            placeholder="Tu nombre completo"
+                            required
+                        >
+
+                    </div>
+
+                   
+
+                    <div class="form-group">
+
+                        <label for="nacionalidad">
+                            Nacionalidad
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nacionalidad"
+                            class="input"
+                            placeholder="Ej: Colombiana"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Correo electrónico
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            class="input"
+                            placeholder="correo@email.com"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- TELÉFONO -->
+
+                    <div class="form-group">
+
+                        <label for="telefono">
+                            Teléfono
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefono"
+                            class="input"
+                            placeholder="+57 300 000 0000"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Contraseña
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            class="input"
+                            placeholder="••••••••"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- BOTÓN -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary search-btn"
+                    >
+                        Registrarse
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SCRIPT -->
+
+    <script src="./js/registro.js"></script>
+
+</body>
+
+</html>

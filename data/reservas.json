@@ -1,0 +1,12 @@
+[
+  {
+    "idReserva": 1,
+    "idUsuario": 1,
+    "idHabitacion": 2,
+    "fechaEntrada": "2026-05-20",
+    "fechaSalida": "2026-05-25",
+    "personas": 2,
+    "total": 1600000,
+    "estado": "activa"
+  }
+]

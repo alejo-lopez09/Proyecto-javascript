@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "nombre": "Habitación Deluxe",
+    "precio": 320000,
+    "personas": 4,
+    "camas": 2,
+    "servicios": [
+      "WiFi",
+      "Minibar",
+      "Jacuzzi",
+      "Smart TV"
+    ],
+    "imagen": "./assets/img/habitacion-1.jpg"
+  }
+]

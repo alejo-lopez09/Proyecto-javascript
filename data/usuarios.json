@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "identificacion": "1090000000",
+    "nombre": "Alejandro",
+    "nacionalidad": "Colombiana",
+    "email": "correo@email.com",
+    "telefono": "3000000000",
+    "password": "123456"
+  }
+]
