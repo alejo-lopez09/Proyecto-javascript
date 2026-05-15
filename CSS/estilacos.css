@@ -409,6 +409,26 @@ p {
 .room-card-content {
   padding: 2rem;
 }
+
+.room-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.rooms-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.room-card {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
 .room-bottom {
   display: flex;
   align-items: center;
