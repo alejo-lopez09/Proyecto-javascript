@@ -314,12 +314,16 @@ p {
 }
 
 
-
 .navbar {
-  
-  width: 100%;
-  top: 0;
-  z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 1rem 0;
+
+    background: rgba(11,19,43,0.92);
 
   backdrop-filter: blur(14px);
 
@@ -335,7 +339,18 @@ p {
 }
 
 .navbar-container {
-  height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 70px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    color: var(--color-smoke);
 }
 
 .nav-links {
@@ -418,6 +433,21 @@ p {
 .room-card-content {
   padding: 2rem;
 }
+
+.room-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.rooms-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
 .room-bottom {
   display: flex;
   align-items: center;

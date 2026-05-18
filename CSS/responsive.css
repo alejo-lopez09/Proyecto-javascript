@@ -80,3 +80,36 @@
     height: 500px;
   }
 }
+
+@media (max-width: 768px) {
+
+    .admin-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .table {
+        min-width: 650px;
+    }
+
+    .admin-panel {
+        padding: 1.2rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .admin-hero h1 {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .admin-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
