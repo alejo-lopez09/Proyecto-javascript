@@ -1,115 +1,269 @@
+/* =========================================
+   TABLET
+========================================= */
+
 @media (max-width: 992px) {
 
-  .grid-4,
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .grid-3,
+    .grid-4 {
 
-  .hero {
-    text-align: center;
-  }
+        grid-template-columns: repeat(2, 1fr);
 
-  .nav-links {
-    gap: 1rem;
-  }
-}
-
-
-@media (max-width: 768px) {
-
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
-  }
-
-  .section {
-    padding: 4rem 0;
-  }
-
-  .navbar-container {
-    height: 80px;
-  }
-
-  .hero {
-    min-height: 85vh;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 2.8rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-}
-
-
-
-@media (max-width: 480px) {
-
-  body {
-    font-size: 14px;
-  }
-
-  .container {
-    width: 92%;
-  }
-
-  .room-card img {
-    height: 220px;
-  }
-}
-
-@media (min-width: 768px) {
-  .slides img {
-    height: 400px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .slides img {
-    height: 500px;
-  }
-}
-
-@media (max-width: 768px) {
-
-    .admin-stats {
-        grid-template-columns: 1fr 1fr;
     }
 
-    .table {
-        min-width: 650px;
+    .hero,
+    .admin-hero,
+    .reservas-hero {
+
+        text-align: center;
+
+    }
+
+    .hero-content,
+    .admin-hero-content,
+    .reservas-hero-content {
+
+        margin: 0 auto;
+
+    }
+
+    .nav-links {
+
+        gap: 1rem;
+
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    body {
+
+        padding-top: 120px;
+
+    }
+
+    /* GRID */
+
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .rooms-container,
+    .services-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    /* SECCIONES */
+
+    .section {
+
+        padding: 4rem 0;
+
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+
+        padding: 1rem;
+
+    }
+
+    .navbar-container {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 1rem;
+
+    }
+
+    .logo {
+
+        font-size: 1.5rem;
+
+    }
+
+    .nav-links {
+
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        gap: 1rem;
+
+    }
+
+    /* HERO */
+
+    .hero,
+    .admin-hero,
+    .reservas-hero {
+
+        min-height: auto;
+
+        padding: 3rem 0;
+
+    }
+
+    .hero-content,
+    .admin-hero-content,
+    .reservas-hero-content {
+
+        max-width: 100%;
+
+        text-align: center;
+
+    }
+
+    h1 {
+
+        font-size: 2.8rem;
+
+    }
+
+    h2 {
+
+        font-size: 2rem;
+
+    }
+
+    p {
+
+        font-size: 0.95rem;
+
+    }
+
+    /* BOTONES */
+
+    .btn {
+
+        width: 100%;
+
+    }
+
+    /* ROOMS */
+
+    .room-card img {
+
+        height: 220px;
+
+    }
+
+    /* ADMIN */
+
+    .admin-stats {
+
+        grid-template-columns: 1fr;
+
     }
 
     .admin-panel {
+
         padding: 1.2rem;
+
+    }
+
+    .table {
+
+        min-width: 650px;
+
     }
 
 }
 
-@media (max-width: 768px) {
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-    .admin-hero h1 {
-        font-size: 3rem;
-        line-height: 1.1;
+@media (max-width: 480px) {
+
+    body {
+
+        font-size: 14px;
+
+    }
+
+    .container {
+
+        width: 92%;
+
+    }
+
+    h1 {
+
+        font-size: 2.3rem;
+
+    }
+
+    h2 {
+
+        font-size: 1.7rem;
+
+    }
+
+    .room-card img {
+
+        height: 200px;
+
     }
 
 }
 
-@media (max-width: 768px) {
+/* =========================================
+   GALLERY
+========================================= */
 
-    .admin-stats {
-        grid-template-columns: 1fr 1fr;
+@media (min-width: 768px) {
+
+    .slides img {
+
+        height: 400px;
+
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .slides img {
+
+        height: 500px;
+
+    }
+
+}
+@media (max-width: 992px) {
+
+    .hero {
+
+        text-align: center;
+
+        justify-content: center;
+
+        padding-top: 140px;
+
+    }
+
+    .hero-content {
+
+        margin-left: 0;
+
+        padding: 1rem;
+
+    }
+
+    .hero-content h1 {
+
+        max-width: 100%;
+
     }
 
 }

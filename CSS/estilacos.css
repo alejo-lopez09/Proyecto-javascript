@@ -288,20 +288,35 @@ p {
 
 
 .btn-primary {
-  background: var(--color-gold);
-  color: var(--color-midnight);
-  text-align: center;
-  box-shadow:
-    inset 0 1px 2px rgba(255,255,255,0.25),
-    inset 0 -2px 6px rgba(0,0,0,0.18),
-    0 8px 20px rgba(212,163,115,0.18);
+
+    display: inline-flex;
+
+    width: fit-content;
+
+    padding: 1rem 2.2rem;
+
+    border-radius: 999px;
+
+    background: var(--color-gold);
+
+    color: var(--color-midnight);
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(232,179,75,0.25);
 
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  opacity: 0.92;
+
+    transform: translateY(-4px);
+
 }
+
+
 
 .btn-outline {
   border: 1px solid var(--color-gold);
@@ -314,121 +329,302 @@ p {
 }
 
 
+/* =========================================
+   NAVBAR
+========================================= */
+
 .navbar {
+
     position: fixed;
+
     top: 0;
     left: 0;
 
     width: 100%;
 
+    z-index: 999;
+
     padding: 1rem 0;
 
-    background: rgba(11,19,43,0.92);
+    background: rgba(11, 19, 43, 0.85);
 
-  backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
 
-  background: rgba(11,19,43,0.65);
-
-  border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
 
 }
 
-.navbar h3 {
-  word-break: break-word;
-  overflow-wrap: break-word;
+/* EVITA QUE EL NAVBAR TAPE EL CONTENIDO */
+
+body {
+
+    padding-top: 90px;
+
 }
+
+/* CONTENEDOR NAVBAR */
 
 .navbar-container {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
-    min-height: 70px;
+    gap: 3rem;
+
+    min-height: 90px;
+
 }
 
+/* LOGO */
 .logo {
-    font-size: 2rem;
+
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+
     font-family: var(--font-secondary);
+
     font-weight: 700;
+
     color: var(--color-smoke);
+
+    white-space: nowrap;
+
 }
+
+/* LINKS */
 
 .nav-links {
-  display: flex;
-  gap: 2rem;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 2.5rem;
+
+    margin-left: auto;
+
 }
 
 .nav-links a {
-  position: relative;
-  transition: var(--transition-fast);
+
+    position: relative;
+
+    transition: var(--transition-fast);
+
 }
 
 .nav-links a::after {
-  content: "";
 
-  position: absolute;
-  left: 0;
-  bottom: -6px;
+    content: "";
 
-  width: 0%;
-  height: 2px;
+    position: absolute;
 
-  background: var(--color-gold);
+    left: 0;
+    bottom: -6px;
 
-  transition: var(--transition-normal);
+    width: 0%;
+
+    height: 2px;
+
+    background: var(--color-gold);
+
+    transition: var(--transition-normal);
+
 }
 
 .nav-links a:hover::after {
-  width: 100%;
+
+    width: 100%;
+
 }
 
+/* =========================================
+   HERO
+========================================= */
+
+.hero,
+.admin-hero,
+.reservas-hero {
+
+    position: relative;
+
+    min-height: calc(100vh - 90px);
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 5rem 0;
+
+    overflow: hidden;
+
+}
+
+/* HERO HOME */
 
 .hero {
-  position: relative;
 
-  min-height: 100vh;
+    position: relative;
 
-  display: flex;
-  align-items: center;
+    min-height: 100vh;
 
-  background:
-    linear-gradient(var(--color-overlay), var(--color-overlay)),
-    url('../img/hotel/LATERAL.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+
+    padding-top: 120px;
+
+    background:
+        linear-gradient(
+            rgba(11,19,43,0.72),
+            rgba(11,19,43,0.72)
+        ),
+        url('../img/hotel/LATERAL.png')
+        center center / cover no-repeat;
+
 }
+
+/* CONTENIDO HERO */
 
 .hero-content {
-  max-width: 700px;
+
+    max-width: 720px;
+
+    padding: 2rem;
+
+    margin-left: 5%;
+
+    z-index: 2;
+
 }
 
-.hero-subtitle {
-  color: var(--color-gold);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+.hero-content h1 {
+
+    font-size: clamp(3.5rem, 6vw, 6rem);
+
+    line-height: 1.05;
+
+    margin-bottom: 2rem;
+
+    max-width: 10ch;
+
 }
 
+.hero-content p {
+
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+
+    max-width: 650px;
+
+    margin-bottom: 2rem;
+
+}
+
+/* TITULOS */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: var(--font-secondary);
+
+    line-height: 1.1;
+
+    color: var(--color-smoke);
+
+    font-weight: 600;
+
+}
+
+h1 {
+
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+
+}
+
+h2 {
+
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+
+}
+
+h3 {
+
+    font-size: clamp(1.4rem, 3vw, 2rem);
+
+}
+
+/* =========================================
+   HERO TEXTOS
+========================================= */
+
+.hero-content p,
+.admin-hero-content p,
+.reservas-hero-content p {
+
+    font-size: 1.1rem;
+
+    color: var(--color-text-muted);
+
+    max-width: 650px;
+
+}
+
+/* =========================================
+   FIX ROOMS
+========================================= */
+
+.rooms-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+
+}
 
 .room-card {
-  overflow: hidden;
 
-  border-radius: var(--radius-lg);
+    overflow: hidden;
 
-  background: var(--color-deep);
+    border-radius: var(--radius-lg);
 
-  box-shadow: var(--shadow-md);
+    background: var(--color-deep);
 
-  transition: var(--transition-normal);
+    box-shadow: var(--shadow-md);
+
+    transition: var(--transition-normal);
+
 }
+
+.room-card img {
+
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+
+
 
 .room-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
 }
 
-.room-card img {
-  height: 300px;
-  object-fit: cover;
-}
 
 .room-card-content {
   padding: 2rem;
@@ -442,11 +638,7 @@ p {
 }
 
 
-.rooms-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
+
 
 .room-bottom {
   display: flex;
@@ -459,6 +651,27 @@ p {
   min-width: 220px;
 }
 
+/* =========================================
+   FIX TABLES
+========================================= */
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+.table {
+
+    width: 100%;
+
+    min-width: 700px;
+
+    border-collapse: collapse;
+
+}
 
 .gallery {
   display: grid;
