@@ -330,12 +330,17 @@ p {
 }
 
 .navbar h3 {
-  word-break: break-word;
-  overflow-wrap: break-word;
+
+  font-size: 1.2rem;
+
+  line-height: 1.2;
+
 }
 
 .navbar-container {
-  height: 90px;
+
+  flex-wrap: wrap;
+
 }
 
 .nav-links {
