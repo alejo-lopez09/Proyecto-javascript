@@ -3,14 +3,45 @@
     "id": 1,
     "nombre": "Habitación Deluxe",
     "precio": 320000,
-    "personas": 4,
-    "camas": 2,
+    "personas": 2,
+    "camas": 1,
     "servicios": [
       "WiFi",
       "Minibar",
       "Jacuzzi",
       "Smart TV"
     ],
-    "imagen": "./assets/img/habitacion-1.jpg"
+    "imagen": "./img/habitaciones/Habitacion_Deluxe.png"
+  },
+
+
+
+  {
+    "id": 2,
+    "nombre": "Suite Premium",
+    "precio": 620000,
+    "personas": 2,
+    "camas": 1,
+    "servicios": [
+      "WiFi",
+      "Jacuzzi",
+      "Minibar"
+    ],
+    "imagen": "./img/habitaciones/Suite.png"
+  },
+  
+  {
+    "id": 3,
+    "nombre": "Habitacion Familiar",
+    "precio": 440000,
+    "personas": 5,
+    "camas": 3,
+    "servicios": [
+      "WiFi",
+      "Jacuzzi",
+      "Minibar"
+    ],
+    "imagen": "./img/habitaciones/Habitacion_familiar.png"
   }
+
 ]

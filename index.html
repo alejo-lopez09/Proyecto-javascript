@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotel Rincón del Carmen</title>
     
-    <script src="JS/utils.js" defer></script>
+   
     <link rel="stylesheet" href="./CSS/estilacos.css" />
     <link rel="stylesheet" href="./CSS/responsive.css" />
 
@@ -28,10 +28,9 @@
 <body>
     <header class="header">
         <nav class="navbar">
-        <div class="logo">
-            <h2>Rincón del Carmen</h2>
-        </div>
-
+       <a href="index.html" class="logo">
+             El Rincón del Carmen
+    </a>
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="reservas.html">Reservas</a></li>
@@ -106,74 +105,41 @@
 
 
 
-    <section class="rooms">
+   <!-- =========================================
+     HABITACIONES DESTACADAS
+========================================= -->
 
-        <div class="section-title">
-        <h2>Habitaciones Destacadas</h2>
-        <p>Conoce algunas de nuestras habitaciones más reservadas.</p>
-        </div>
+    <section class="rooms section">
 
-        <div class="rooms-container">
+        <div class="container">
 
-        <article class="room-card">
-            <img src="img/habitaciones/Suite.png" alt="Habitación Premium">
+         <div class="section-title mb-3">
 
-            <div class="room-content">
-            <h3>Suite Premium</h3>
+             <span class="badge mb-1">
+                Habitaciones Premium
+                </span>
 
-            <p>
-                Cama king size, jacuzzi privado, minibar y vista panorámica.
-            </p>
+                <h2>
+                Habitaciones Destacadas
+                </h2>
 
-            <span>$250.000 / noche</span>
+             <p>
+                Descubre espacios diseñados para el descanso,
+                el lujo y la comodidad absoluta.
+             </p>
 
-            <a href="reservas.html" class="btn-secondary">
-                Ver disponibilidad
-            </a>
             </div>
-        </article>
 
+        <!-- CONTENEDOR DINÁMICO -->
 
-        <article class="room-card">
-            <img src="img/habitaciones/Habitacion familiar.png" alt="Habitación Familiar">
+            <div
+            class="rooms-container grid grid-3"
+            id="roomsContainer"
+            ></div>
 
-            <div class="room-content">
-            <h3>Habitación Familiar</h3>
+     </div>
 
-            <p>
-                Espacios amplios ideales para grupos y familias.
-            </p>
-
-            <span>$320.000 / noche</span>
-
-            <a href="reservas.html" class="btn-secondary">
-                Ver disponibilidad
-            </a>
-            </div>
-        </article>
-
-
-        <article class="room-card">
-            <img src="img/habitaciones/Gemini_Generated_Image_coh4xzcoh4xzcoh4.png" alt="Habitación Deluxe">
-
-            <div class="room-content">
-            <h3>Habitación Deluxe</h3>
-
-            <p>
-                Diseño elegante, internet de alta velocidad y minibar incluido.
-            </p>
-
-            <span>$180.000 / noche</span>
-
-            <a href="reservas.html" class="btn-secondary">
-                Ver disponibilidad
-            </a>
-            </div>
-        </article>
-
-        </div>
     </section>
-
 
 
     <section class="gallery">
@@ -237,7 +203,10 @@
 
         </div>
     </footer>
-
+<script
+    type="module"
+    src="JS/Components/card-habitacion.js">
+</script>
 </body>
 </html>
 
