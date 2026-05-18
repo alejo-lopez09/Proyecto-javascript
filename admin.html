@@ -1,9 +1,631 @@
-<!-- Panel administrador.
+<!DOCTYPE html>
+<html lang="es">
 
-Debe permitir:
+<head>
 
-✅ Crear habitaciones
-✅ Editar habitaciones
-✅ Eliminar habitaciones
-✅ Ver reservas
-✅ Cancelar reservas -->
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Panel Administrativo | Hotel El Rincón del Carmen
+    </title>
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="./CSS/estilacos.css">
+
+    <link rel="stylesheet" href="./CSS/admin.css">
+
+    <link rel="stylesheet" href="./CSS/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+            <a
+                href="./index.html"
+                class="logo"
+            >
+                El Rincón del Carmen
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="./index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./reservas.html">
+                        Reservas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./contacto.html">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+    <!-- =========================================
+         HERO ADMIN
+    ========================================== -->
+
+    <section class="admin-hero">
+
+        <div class="container">
+
+            <div class="admin-hero-content fade-up">
+
+                <span class="badge mb-1">
+                    Panel Administrativo
+                </span>
+
+                <h1 class="mb-2">
+                    Gestión completa del hotel
+                </h1>
+
+                <p class="mb-3">
+                    Administra habitaciones, reservas y disponibilidad desde un único lugar.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         ALERTA GLOBAL
+    ========================================== -->
+
+    <div id="adminAlerta" class="admin-alerta" style="display:none;"></div>
+
+    <!-- =========================================
+         DASHBOARD
+    ========================================== -->
+
+    <section class="admin-dashboard section">
+
+        <div class="container">
+
+            <!-- =========================================
+                 ESTADÍSTICAS
+            ========================================== -->
+
+            <div class="admin-stats grid grid-4 mb-3">
+
+                <!-- TOTAL HABITACIONES -->
+
+                <article class="admin-stat-card glass">
+
+                    <h3 id="totalHabitaciones">
+                        0
+                    </h3>
+
+                    <p>
+                        Habitaciones
+                    </p>
+
+                </article>
+
+                <!-- RESERVAS ACTIVAS -->
+
+                <article class="admin-stat-card glass">
+
+                    <h3 id="reservasActivas">
+                        0
+                    </h3>
+
+                    <p>
+                        Reservas activas
+                    </p>
+
+                </article>
+
+                <!-- DISPONIBLES -->
+
+                <article class="admin-stat-card glass">
+
+                    <h3 id="habitacionesDisponibles">
+                        0
+                    </h3>
+
+                    <p>
+                        Habitaciones disponibles
+                    </p>
+
+                </article>
+
+                <!-- USUARIOS -->
+
+                <article class="admin-stat-card glass">
+
+                    <h3 id="totalUsuarios">
+                        0
+                    </h3>
+
+                    <p>
+                        Clientes registrados
+                    </p>
+
+                </article>
+
+            </div>
+
+            <!-- =========================================
+                 FORMULARIO HABITACIONES
+            ========================================== -->
+
+            <div id="seccionFormHabitacion" class="admin-panel glass mb-3">
+
+                <div class="section-title mb-2">
+
+                    <!-- Título dinámico: cambia entre "Agregar" y "Editar" -->
+                    <h2 id="habitacionFormTitulo">
+                        Gestión de habitaciones
+                    </h2>
+
+                    <p>
+                        Agrega o edita habitaciones del sistema.
+                    </p>
+
+                </div>
+
+                <form
+                    id="habitacionForm"
+                    class="admin-form"
+                >
+
+                    <!-- NOMBRE -->
+
+                    <div class="form-group">
+
+                        <label for="nombreHabitacion">
+                            Nombre de habitación
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombreHabitacion"
+                            class="input"
+                            placeholder="Suite Premium"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- PRECIO -->
+
+                    <div class="form-group">
+
+                        <label for="precioHabitacion">
+                            Precio por noche
+                        </label>
+
+                        <input
+                            type="number"
+                            id="precioHabitacion"
+                            class="input"
+                            placeholder="320000"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- PERSONAS -->
+
+                    <div class="form-group">
+
+                        <label for="personasHabitacion">
+                            Capacidad máxima
+                        </label>
+
+                        <input
+                            type="number"
+                            id="personasHabitacion"
+                            class="input"
+                            placeholder="4"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- CAMAS -->
+
+                    <div class="form-group">
+
+                        <label for="camasHabitacion">
+                            Número de camas
+                        </label>
+
+                        <input
+                            type="number"
+                            id="camasHabitacion"
+                            class="input"
+                            placeholder="2"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- SERVICIOS -->
+
+                    <div class="form-group">
+
+                        <label for="serviciosHabitacion">
+                            Servicios incluidos
+                        </label>
+
+                        <textarea
+                            id="serviciosHabitacion"
+                            class="input"
+                            rows="4"
+                            placeholder="WiFi, Jacuzzi, Minibar..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                    <!-- IMAGEN -->
+
+                    <div class="form-group">
+
+                        <label for="imagenHabitacion">
+                            URL de imagen
+                        </label>
+
+                        <input
+                            type="text"
+                            id="imagenHabitacion"
+                            class="input"
+                            placeholder="./img/habitaciones/suite.jpg"
+                        >
+
+                    </div>
+
+                    <!-- BOTONES -->
+
+                    <div class="table-actions">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Guardar habitación
+                        </button>
+
+                        <!-- Botón cancelar edición: solo visible en modo edición -->
+                        <button
+                            type="button"
+                            id="btnCancelarEdicion"
+                            class="btn btn-secondary"
+                            style="display:none;"
+                        >
+                            Cancelar edición
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- =========================================
+                 TABLA HABITACIONES
+            ========================================== -->
+
+            <div class="admin-panel glass mb-3">
+
+                <div class="section-title mb-2">
+
+                    <div class="section-title-row">
+
+                        <div>
+
+                            <h2>
+                                Habitaciones registradas
+                            </h2>
+
+                            <p>
+                                Visualiza y administra todas las habitaciones.
+                            </p>
+
+                        </div>
+
+                        <button id="btnNuevaHabitacion" class="btn btn-primary">
+                            + Nueva habitación
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table class="table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Habitación
+                                </th>
+
+                                <th>
+                                    Personas
+                                </th>
+
+                                <th>
+                                    Camas
+                                </th>
+
+                                <th>
+                                    Precio
+                                </th>
+
+                                <th>
+                                    Servicios
+                                </th>
+
+                                <th>
+                                    Estado
+                                </th>
+
+                                <th>
+                                    Acciones
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tablaHabitaciones">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <!-- =========================================
+                 TABLA RESERVAS
+            ========================================== -->
+
+            <div class="admin-panel glass">
+
+                <div class="section-title mb-2">
+
+                    <h2>
+                        Gestión de reservas
+                    </h2>
+
+                    <p>
+                        Control de reservas activas y canceladas.
+                    </p>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table class="table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Cliente
+                                </th>
+
+                                <th>
+                                    Habitación
+                                </th>
+
+                                <th>
+                                    Entrada
+                                </th>
+
+                                <th>
+                                    Salida
+                                </th>
+
+                                <th>
+                                    Personas
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                                <th>
+                                    Estado
+                                </th>
+
+                                <th>
+                                    Acciones
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tablaReservas">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         MODAL — EDITAR RESERVA
+    ========================================== -->
+
+    <div id="reservaModal" class="modal">
+
+        <div class="modal__overlay"></div>
+
+        <div class="modal__content glass">
+
+            <button class="modal__close" aria-label="Cerrar">&#x2715;</button>
+
+            <h2 class="mb-2">
+                Editar Reserva
+            </h2>
+
+            <form id="reservaEditForm" class="admin-form">
+
+                <!-- ID OCULTO -->
+
+                <input
+                    type="hidden"
+                    id="reservaEditId"
+                >
+
+                <!-- FECHA ENTRADA -->
+
+                <div class="form-group">
+
+                    <label for="editFechaEntrada">
+                        Fecha y hora de entrada
+                    </label>
+
+                    <input
+                        type="datetime-local"
+                        id="editFechaEntrada"
+                        class="input"
+                        required
+                    >
+
+                </div>
+
+                <!-- FECHA SALIDA -->
+
+                <div class="form-group">
+
+                    <label for="editFechaSalida">
+                        Fecha y hora de salida
+                    </label>
+
+                    <input
+                        type="datetime-local"
+                        id="editFechaSalida"
+                        class="input"
+                        required
+                    >
+
+                </div>
+
+                <!-- PERSONAS -->
+
+                <div class="form-group">
+
+                    <label for="editPersonas">
+                        Número de personas
+                    </label>
+
+                    <input
+                        type="number"
+                        id="editPersonas"
+                        class="input"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+                <!-- BOTONES -->
+
+                <div class="table-actions">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Guardar cambios
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary modal__close"
+                    >
+                        Cancelar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Hotel El Rincón del Carmen.
+                    Todos los derechos reservados.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JS -->
+
+    <script src="./JS/admin.js"></script>
+
+</body>
+
+</html>
