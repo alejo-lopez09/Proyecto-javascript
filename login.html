@@ -1,198 +1,76 @@
-<!-- Inicio de sesión.
-
-Campos:
-
-email
-contraseña -->
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        Iniciar sesión | Hotel El Rincón del Carmen
-    </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - Hotel Rincón del Carmen</title>
+    
+    <link rel="stylesheet" href="./CSS/estilacos.css" />
+    <link rel="stylesheet" href="./CSS/responsive.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="CSS/estilacos.css">
-    <link rel="stylesheet" href="CSS/admin.css">
-    <link rel="stylesheet" href="CSS/reservas.css">
-    <link rel="stylesheet" href="CSS/responsive.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-    <!-- =========================================
-            NAVBAR
-    ========================================== -->
-
     <header class="navbar">
-
-        <div class="container navbar-container flex-between">
-
-            <a href="./index.html">
-
-                <h3>
-                    El Rincón del Carmen
-                </h3>
-
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <img src="img/hotel/logo/logo.png" alt="logo del hotel">
             </a>
-
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="reservas.html">Reservas</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="login.html">Iniciar sesión</a></li>
-                    <li><a href="registro.html">Registrate aquí</a></li>
-                </ul>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="reservas.html">Reservas</a>
+                <a href="contacto.html">Contacto</a>
+                <div id="navAuth"></div>
             </nav>
         </div>
-
     </header>
 
-    <!-- =========================================
-            HERO
-    ========================================== -->
+    <main class="auth-section">
+        <div class="auth-form-container">
+            <h1>Iniciar Sesión</h1>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" class="input" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Contraseña</label>
+                    <input type="password" id="loginPassword" class="input" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Iniciar Sesión</button>
+            </form>
 
-    <section class="booking-hero">
+            <p class="auth-link">
+                ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+            </p>
 
+            <div class="demo-info">
+                <h3>Datos de Prueba</h3>
+                <p><strong>Admin:</strong><br>
+                Email: admin@hotelcarmen.com<br>
+                Contraseña: admin123</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
         <div class="container">
-
-            <div class="booking-hero-content fade-up">
-
-                <span class="badge mb-1">
-                    Acceso de huéspedes
-                </span>
-
-                <h1 class="mb-2">
-                    Inicia sesión en tu cuenta
-                </h1>
-
-                <p class="mb-3">
-                    Accede para consultar, gestionar o cancelar tus reservas de manera rápida y segura.
-                </p>
-
+            <div style="text-align: center;">
+                <h3>Hotel Rincón del Carmen</h3>
+                <p>Tu mejor experiencia de descanso y comodidad.</p>
             </div>
-
-        </div>
-
-    </section>
-
-    <!-- =========================================
-            FORMULARIO LOGIN
-    ========================================== -->
-
-    <section class="booking-section">
-
-        <div class="container-sm">
-
-            <div class="booking-card glass">
-
-                <div class="section-title mb-3">
-
-                    <h2 class="mb-1">
-                        Bienvenido nuevamente
-                    </h2>
-
-                    <p>
-                        Ingresa tus datos para continuar.
-                    </p>
-
-                </div>
-
-                <form
-                    id="loginForm"
-                    class="booking-form"
-                >
-
-                    <!-- EMAIL -->
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Correo electrónico
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            class="input"
-                            placeholder="correo@email.com"
-                            required
-                        >
-
-                    </div>
-
-                    <!-- PASSWORD -->
-
-                    <div class="form-group">
-
-                        <label for="password">
-                            Contraseña
-                        </label>
-
-                        <input
-                            type="password"
-                            id="password"
-                            class="input"
-                            placeholder="••••••••"
-                            required
-                        >
-
-                    </div>
-
-                    <!-- BOTÓN -->
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary search-btn"
-                    >
-                        Iniciar sesión
-                    </button>
-
-                </form>
-
-                <!-- LINK REGISTRO -->
-
-                <div class="register-link mt-2">
-
-                    <p>
-                        ¿No tienes una cuenta?
-                        <a href="./registro.html">
-                            Regístrate aquí
-                        </a>
-                    </p>
-
-                </div>
-
+            <div class="footer-bottom">
+                <p>Email: hotelrincon@gmail.com | Tel: 321 226 0838 | Cúcuta - Colombia</p>
             </div>
-
         </div>
+    </footer>
 
-    </section>
-
-    <!-- SCRIPT -->
-
-    <script src="./js/login.js"></script>
-
+<script src="JS/storage.js"></script>
+<script src="JS/utils.js"></script>
+<script src="JS/auth.js"></script>
+<script src="JS/login.js"></script>
 </body>
-
 </html>

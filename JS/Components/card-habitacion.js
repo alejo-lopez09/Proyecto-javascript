@@ -1,233 +1,25 @@
-/* card-habitacion.js
+// ============================================
+// CARD-HABITACION.JS - Componente Tarjeta
+// ============================================
 
-Tarjeta para mostrar habitaciones. */
-
-
-// CONTENLO
-
-
-const roomsContainer =
-    document.getElementById(
-        "roomsContainer"
-    );
-
-
-// OBTENER HABITACIONES
-
-
-async function obtenerHabitaciones() {
-
-    try {
-
-        const response =
-            await fetch(
-                "./data/habitaciones.json"
-            );
-
-        const habitaciones =
-            await response.json();
-
-        return habitaciones;
-
-    } catch (error) {
-
-        console.error(
-            "Error cargando habitaciones:",
-            error
-        );
-
-        return [];
-
-    }
-
+function createRoomCard(room, showReserveBtn = true) {
+  // Usar la imagen del JSON si existe, sino usar la ruta por defecto
+  const imagenSrc = room.imagen || `img/hotel/room${room.id}.jpg`;
+  
+  return `
+    <div class="room-card">
+      <img src="${imagenSrc}" alt="${room.name}" 
+           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%231C2541%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23E8B34B%22 font-family=%22Arial%22%3E${room.name}%3C/text%3E%3C/svg%3E'">
+      <div class="room-card-content">
+        <h3>${room.name}</h3>
+        <p>${room.description}</p>
+        <p><strong>Capacidad:</strong> ${room.capacity} personas | <strong>Camas:</strong> ${room.beds}</p>
+        <p><strong>Servicios:</strong> ${room.services.join(', ')}</p>
+        <div class="room-bottom">
+          <span style="font-size: 1.5rem; color: #E8B34B;"><strong>$${room.price}/noche</strong></span>
+          ${showReserveBtn ? `<button class="btn-primary" onclick="reserveRoom(${room.id})">Reservar</button>` : ''}
+        </div>
+      </div>
+    </div>
+  `;
 }
-
-
-// CREAR CARD
-
-
-function crearCardHabitacion(
-    habitacion
-) {
-
-    return `
-
-        <article class="room-card fade-up">
-
-            <!-- IMAGEN -->
-
-            <img
-                src="${habitacion.imagen}"
-                alt="${habitacion.nombre}"
-                class="room-image"
-            >
-
-            <!-- CONTENIDO -->
-
-            <div class="room-content">
-
-                <!-- HEADER -->
-
-                <div class="room-header">
-
-                    <h3>
-                        ${habitacion.nombre}
-                    </h3>
-
-                    <span class="badge">
-                        Disponible
-                    </span>
-
-                </div>
-
-                <!-- DESCRIPCIÓN -->
-
-                <p class="room-description">
-
-                    ${habitacion.personas}
-                    personas ·
-                    ${habitacion.camas}
-                    camas
-
-                </p>
-
-                <!-- SERVICIOS -->
-
-                <div class="room-services">
-
-                    ${habitacion.servicios
-                        .map(
-                            servicio => `
-
-                                <span>
-                                    ${servicio}
-                                </span>
-
-                            `
-                        )
-                        .join("")}
-
-                </div>
-
-                <!-- FOOTER -->
-
-                <div class="room-footer">
-
-                    <div class="room-price">
-
-                        <small>
-                            Desde
-                        </small>
-
-                        <h4>
-                            $${Number(habitacion.precio)
-                                .toLocaleString("es-CO")}
-                        </h4>
-
-                        <span>
-                            por noche
-                        </span>
-
-                    </div>
-
-                    <button
-                        class="btn btn-primary reservar-btn"
-                        data-id="${habitacion.id}"
-                    >
-                        Reservar
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    `;
-
-}
-
-
-// RENDERIZAR HABITACIONES
-
-
-async function renderizarHabitaciones() {
-
-    const habitaciones =
-        await obtenerHabitaciones();
-
-    roomsContainer.innerHTML = "";
-
-    if (
-        habitaciones.length === 0
-    ) {
-
-        roomsContainer.innerHTML = `
-
-            <p class="no-rooms">
-                No hay habitaciones disponibles.
-            </p>
-
-        `;
-
-        return;
-
-    }
-
-    habitaciones.forEach(
-        (habitacion) => {
-
-            roomsContainer.innerHTML +=
-                crearCardHabitacion(
-                    habitacion
-                );
-
-        }
-    );
-
-    activarBotonesReserva();
-
-}
-
-
-// BOTONES RESERVA
-
-
-function activarBotonesReserva() {
-
-    const botones =
-        document.querySelectorAll(
-            ".reservar-btn"
-        );
-
-    botones.forEach(
-        (boton) => {
-
-            boton.addEventListener(
-                "click",
-                () => {
-
-                    const id =
-                        Number(
-                            boton.dataset.id
-                        );
-
-                    localStorage.setItem(
-                        "habitacionSeleccionada",
-                        id
-                    );
-
-                    window.location.href =
-                        "./reservas.html";
-
-                }
-            );
-
-        }
-    );
-
-}
-
-
-
-renderizarHabitaciones();

@@ -1,3 +1,0 @@
-/* footer.js
-
-Footer reutilizable. */

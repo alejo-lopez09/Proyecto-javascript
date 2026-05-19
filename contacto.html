@@ -1,385 +1,112 @@
-
-<!-- Debe tener:
-
-✅ Hero principal
-✅ Nombre del hotel
-✅ Botón “Reservar ahora”
-✅ Carrusel de imágenes
-✅ Servicios del hotel
-✅ Habitaciones destacadas
-✅ Galería
-✅ Footer -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel Rincón del Carmen</title>
+    <title>Contacto - Hotel Rincón del Carmen</title>
     
-    <script src="JS/utils.js" defer></script>
     <link rel="stylesheet" href="./CSS/estilacos.css" />
     <link rel="stylesheet" href="./CSS/responsive.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- =========================================
-            NAVBAR
-    ========================================== -->
-
     <header class="navbar">
-
-        <div class="container navbar-container flex-between">
-
-            <a href="./index.html">
-
-                <h3>
-                    El Rincón del Carmen
-                </h3>
-
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <img src="img/hotel/logo/logo.png" alt="logo del hotel">
             </a>
-
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="reservas.html">Reservas</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="login.html">Iniciar sesión</a></li>
-                    <li><a href="registro.html">Registrate aquí</a></li>
-                </ul>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="reservas.html">Reservas</a>
+                <a href="contacto.html">Contacto</a>
+                <div id="navAuth"></div>
             </nav>
-
         </div>
-
     </header>
 
-
-    <!-- =========================================
-            HERO
-    ========================================== -->
-
-    <section class="booking-hero">
-
-        <div class="container">
-
-            <div class="booking-hero-content fade-up">
-
-                <span class="badge mb-1">
-                    Atención personalizada
-                </span>
-
-                <h1 class="mb-2">
-                    TE estámos esperando para brindarte una experiencia inolvidable
-                </h1>
-
-                <p class="mb-3">
-                    Contáctanos para resolver dudas, gestionar reservas
-                    o recibir información sobre nuestras habitaciones
-                    y servicios premium.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================
-            CONTACTO
-    ========================================== -->
-
-    <section class="contact-section">
-
-        <div class="container contact-container">
-
-            <!-- =========================
-                    CARDS
-            ========================== -->
-
-            <div class="contact-cards">
-
-                <article class="contact-card glass">
-
-                    <div class="contact-icon">
-                        📍
-                    </div>
-
-                    <h3>
-                        Dirección
-                    </h3>
-
-                    <p>
-                        Avenida 5 #12-45
-                        <br>
-                        Cúcuta, Colombia
-                    </p>
-
-                </article>
-
-
-                <article class="contact-card glass">
-
-                    <div class="contact-icon">
-                        📞
-                    </div>
-
-                    <h3>
-                        Teléfono
-                    </h3>
-
-                    <p>
-                        +57 300 000 0000
-                    </p>
-
-                </article>
-
-
-                <article class="contact-card glass">
-
-                    <div class="contact-icon">
-                        ✉️
-                    </div>
-
-                    <h3>
-                        Correo
-                    </h3>
-
-                    <p>
-                        hotelrincondelcarmen@gmail.com
-                    </p>
-
-                </article>
-
-
-                <article class="contact-card glass">
-
-                    <div class="contact-icon">
-                        🕒
-                    </div>
-
-                    <h3>
-                        Horario
-                    </h3>
-
-                    <p>
-                        Atención 24 horas
-                    </p>
-
-                </article>
-
-            </div>
-
-
-
-            <!-- =========================
-                    FORMULARIO
-            ========================== -->
-
-            <div class="contact-form-wrapper glass">
-
-                <div class="section-title mb-3">
-
-                    <h2 class="mb-1">
-                        Envíanos un mensaje
-                    </h2>
-
-                    <p>
-                        Nuestro equipo responderá lo antes posible.
-                    </p>
-
+    <main class="container contacto-section">
+        <h1>Contacto</h1>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Información de Contacto</h2>
+                
+                <div class="info-item">
+                    <h3>Dirección</h3>
+                    <p>Calle Principal 123<br>Cúcuta - Colombia</p>
                 </div>
 
+                <div class="info-item">
+                    <h3>Teléfono</h3>
+                    <p>+57 321 226 0838</p>
+                </div>
 
-                <form class="contact-form">
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p>hotelrincon@gmail.com</p>
+                </div>
 
+                <div class="info-item">
+                    <h3>Horarios de Atención</h3>
+                    <p>Lunes - Viernes: 8:00 AM - 6:00 PM<br>
+                       Sábado - Domingo: 9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <h2>Envíanos un Mensaje</h2>
+                <form id="contactForm" class="contact-form">
                     <div class="form-group">
-
-                        <label for="nombre">
-                            Nombre completo
-                        </label>
-
-                        <input
-                            type="text"
-                            id="nombre"
-                            class="input"
-                            placeholder="Tu nombre completo"
-                            required
-                        >
-
+                        <label for="contactName">Nombre</label>
+                        <input type="text" id="contactName" class="input" required>
                     </div>
-
-
                     <div class="form-group">
-
-                        <label for="email">
-                            Correo electrónico
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            class="input"
-                            placeholder="correo@email.com"
-                            required
-                        >
-
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" class="input" required>
                     </div>
-
-
                     <div class="form-group">
-
-                        <label for="mensaje">
-                            Mensaje
-                        </label>
-
-                        <textarea
-                            id="mensaje"
-                            class="input"
-                            rows="6"
-                            placeholder="Escribe tu mensaje..."
-                            required
-                        ></textarea>
-
+                        <label for="contactPhone">Teléfono</label>
+                        <input type="tel" id="contactPhone" class="input" required>
                     </div>
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary search-btn"
-                    >
-                        Enviar mensaje
-                    </button>
-
+                    <div class="form-group">
+                        <label for="contactSubject">Asunto</label>
+                        <input type="text" id="contactSubject" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Mensaje</label>
+                        <textarea id="contactMessage" class="input" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Enviar Mensaje</button>
                 </form>
-
             </div>
-
         </div>
 
-    </section>
-
-
-    <!-- =========================================
-            MAPA
-    ========================================== -->
-
-    <section class="map-section section">
-
-        <div class="container">
-
-            <div class="section-title mb-3">
-
-                <h2 class="mb-1">
-                    Nuestra ubicación
-                </h2>
-
-                <p>
-                    Encuéntranos fácilmente en la ciudad.
-                </p>
-
+        <div class="map-section">
+            <h2>Ubicación</h2>
+            <div class="map-placeholder">
+                <p>Mapa interactivo - Cúcuta, Colombia</p>
             </div>
-
-
-            <div class="map-wrapper">
-
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.14543431425!2d-72.553136756505!3d7.893914893446177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66459d2c7e5b0f%3A0x55d94fbe0cb0f3b5!2sC%C3%BAcuta%2C%20Norte%20de%20Santander!5e0!3m2!1ses!2sco!4v1715644200000!5m2!1ses!2sco"
-                    width="100%"
-                    height="400"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy">
-
-                </iframe>
-
-            </div>
-
         </div>
-
-    </section>
-
-
-    <!-- =========================================
-            FOOTER
-    ========================================== -->
+    </main>
 
     <footer class="footer">
-
-        <div class="container footer-container">
-
-            <div>
-
-                <h3>
-                    El Rincón del Carmen
-                </h3>
-
-                <p>
-                    Vive una experiencia única de lujo y descanso.
-                </p>
-
+        <div class="container">
+            <div style="text-align: center;">
+                <h3>Hotel Rincón del Carmen</h3>
+                <p>Tu mejor experiencia de descanso y comodidad.</p>
             </div>
-
-
-            <div>
-
-                <h4>
-                    Navegación
-                </h4>
-
-                <ul>
-
-                    <li>
-                        <a href="./index.html">
-                            Inicio
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./reservas.html">
-                            Reservas
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./contacto.html">
-                            Contacto
-                        </a>
-                    </li>
-
-                </ul>
-
+            <div class="footer-bottom">
+                <p>Email: hotelrincon@gmail.com | Tel: 321 226 0838 | Cúcuta - Colombia</p>
             </div>
-
-
-            <div>
-
-                <h4>
-                    Contacto
-                </h4>
-
-                <p>
-                    +57 300 000 0000
-                </p>
-
-                <p>
-                    hotelrincondelcarmen@gmail.com
-                </p>
-
-                <p>
-                    Cúcuta, Colombia
-                </p>
-
-            </div>
-
         </div>
-
     </footer>
 
+<script src="JS/storage.js"></script>
+<script src="JS/utils.js"></script>
+<script src="JS/auth.js"></script>
+<script src="JS/contacto.js"></script>
 </body>
 </html>
-

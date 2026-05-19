@@ -1,375 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        Reservas | Hotel El Rincón del Carmen
-    </title>
-
-    <!-- GOOGLE FONTS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservas - Hotel Rincón del Carmen</title>
+    
+    <link rel="stylesheet" href="./CSS/estilacos.css" />
+    <link rel="stylesheet" href="./CSS/responsive.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- CSS -->
-
-    <link rel="stylesheet" href="./CSS/estilacos.css">
-    <link rel="stylesheet" href="CSS/responsive.css">
-    <link rel="stylesheet" href="./CSS/reservas.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-    <!-- =========================================
-         NAVBAR
-    ========================================== -->
-
     <header class="navbar">
-
         <div class="container navbar-container">
-
-            <!-- LOGO -->
-
-            <a
-                href="./index.html"
-                class="logo"
-            >
-
-                <img
-                    src="./img/hotel/logo/logo.png"
-                    alt="Logo Hotel"
-                >
-
+            <a href="index.html" class="logo">
+                <img src="img/hotel/logo.png" alt="logo del hotel">
             </a>
-
-            <!-- LINKS -->
-
-            <nav>
-
-                <ul class="nav-links">
-
-                    <li>
-                        <a href="./index.html">
-                            Inicio
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./reservas.html">
-                            Reservas
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./contacto.html">
-                            Contacto
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./login.html">
-                            Iniciar sesión
-                        </a>
-                    </li>
-
-                </ul>
-
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="reservas.html">Reservas</a>
+                <a href="contacto.html">Contacto</a>
+                <div id="navAuth"></div>
             </nav>
-
         </div>
-
     </header>
 
-    <!-- =========================================
-         HERO
-    ========================================== -->
-
-    <section class="booking-hero">
-
-        <div class="container">
-
-            <div class="booking-hero-content fade-up">
-
-                <span class="badge mb-1">
-                    Hotel Premium
-                </span>
-
-                <h1 class="mb-2">
-                    Reserva una experiencia inolvidable
-                </h1>
-
-                <p class="mb-3">
-                    Habitaciones modernas, espacios exclusivos y una experiencia diseñada para el descanso perfecto.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- =========================================
-         BOOKING FORM
-    ========================================== -->
-
-    <section class="booking-section">
-
-        <div class="container">
-
-            <div class="booking-card glass">
-
-                <div class="section-title mb-3">
-
-                    <h2 class="mb-1">
-                        Consulta disponibilidad
-                    </h2>
-
-                    <p>
-                        Encuentra la habitación ideal para tu estadía.
-                    </p>
-
+    <main class="container reservations-section">
+        <h1>Buscar y Reservar Habitaciones</h1>
+        
+        <div class="search-form">
+            <h2>Encuentra tu habitación ideal</h2>
+            <form id="searchForm">
+                <div class="grid grid-3">
+                    <div class="form-group">
+                        <label for="checkIn">Fecha de Entrada</label>
+                        <input type="date" id="checkIn" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkOut">Fecha de Salida</label>
+                        <input type="date" id="checkOut" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="people">Cantidad de Personas</label>
+                        <input type="number" id="people" class="input" min="1" max="10" value="1" required>
+                    </div>
                 </div>
-
-                <form class="booking-form">
-
-                    <!-- CHECKIN -->
-
-                    <div class="form-group">
-
-                        <label for="checkin">
-                            Fecha entrada
-                        </label>
-
-                        <input
-                            type="date"
-                            id="checkin"
-                            class="input"
-                            required
-                        >
-
-                    </div>
-
-                    <!-- CHECKOUT -->
-
-                    <div class="form-group">
-
-                        <label for="checkout">
-                            Fecha salida
-                        </label>
-
-                        <input
-                            type="date"
-                            id="checkout"
-                            class="input"
-                            required
-                        >
-
-                    </div>
-
-                    <!-- PERSONAS -->
-
-                    <div class="form-group">
-
-                        <label for="guests">
-                            Huéspedes
-                        </label>
-
-                        <select
-                            id="guests"
-                            class="input"
-                            required
-                        >
-
-                            <option value="">
-                                Selecciona
-                            </option>
-
-                            <option value="1">
-                                1 Persona
-                            </option>
-
-                            <option value="2">
-                                2 Personas
-                            </option>
-
-                            <option value="3">
-                                3 Personas
-                            </option>
-
-                            <option value="4">
-                                4 Personas
-                            </option>
-
-                            <option value="5">
-                                5 Personas
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <!-- BOTON -->
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary search-btn"
-                    >
-
-                        Buscar habitación
-
-                    </button>
-
-                </form>
-
-            </div>
-
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Buscar Disponibilidad</button>
+            </form>
         </div>
 
-    </section>
+        <div id="availableRooms" class="rooms-container"></div>
 
-     <section class="rooms section">
-
-        <div class="container">
-
-         <div class="section-title mb-3">
-
-             <span class="badge mb-1">
-                Habitaciones Premium
-                </span>
-
-                <h2>
-                Habitaciones Destacadas
-                </h2>
-
-             <p>
-                Descubre espacios diseñados para el descanso,
-                el lujo y la comodidad absoluta.
-             </p>
-
-            </div>
-
-        <!-- CONTENEDOR DINÁMICO -->
-
-            <div
-            class="rooms-container grid grid-3"
-            id="roomsContainer"
-            ></div>
-
-     </div>
-
-    </section>
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
+        <div class="my-reservations">
+            <h2>Mis Reservas</h2>
+            <div id="myReservations" class="reservations-list"></div>
+        </div>
+    </main>
 
     <footer class="footer">
-
         <div class="container">
-
-            <div class="grid grid-3">
-
-                <!-- MARCA -->
-
-                <div>
-
-                    <h3 class="mb-2">
-                        El Rincón del Carmen
-                    </h3>
-
-                    <p>
-                        Un espacio premium pensado para descanso, confort y exclusividad.
-                    </p>
-
-                </div>
-
-                <!-- LINKS -->
-
-                <div>
-
-                    <h4 class="mb-2">
-                        Navegación
-                    </h4>
-
-                    <ul class="footer-links">
-
-                        <li>
-                            <a href="./index.html">
-                                Inicio
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="./reservas.html">
-                                Reservas
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="./contacto.html">
-                                Contacto
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-                <!-- CONTACT -->
-
-                <div>
-
-                    <h4 class="mb-2">
-                        Contacto
-                    </h4>
-
-                    <p>
-                        +57 300 000 0000
-                    </p>
-
-                    <p>
-                        contacto@rincondelcarmen.com
-                    </p>
-
-                    <p>
-                        Norte de Santander, Colombia
-                    </p>
-
-                </div>
-
+            <div style="text-align: center;">
+                <h3>Hotel Rincón del Carmen</h3>
+                <p>Tu mejor experiencia de descanso y comodidad.</p>
             </div>
-
             <div class="footer-bottom">
-
-                <p>
-                    © 2026 Hotel El Rincón del Carmen.
-                    Todos los derechos reservados.
-                </p>
-
+                <p>Email: hotelrincon@gmail.com | Tel: 321 226 0838 | Cúcuta - Colombia</p>
             </div>
-
         </div>
-
     </footer>
 
-    <!-- JS -->
-
-    <script src="./JS/reservas.js"></script>
-    <script src="JS/Components/card-habitacion.js"></script>
+<script src="JS/storage.js"></script>
+<script src="JS/utils.js"></script>
+<script src="JS/auth.js"></script>
+<script src="JS/data.js"></script>              <!-- CARGA EL JSON -->
+<script src="JS/Components/card-habitacion.js"></script>
+<script src="JS/index.js"></script>  
 </body>
-
 </html>

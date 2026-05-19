@@ -1,15 +1,3 @@
-
-<!-- Debe tener:
-
-✅ Hero principal
-✅ Nombre del hotel
-✅ Botón “Reservar ahora”
-✅ Carrusel de imágenes
-✅ Servicios del hotel
-✅ Habitaciones destacadas
-✅ Galería
-✅ Footer -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,195 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotel Rincón del Carmen</title>
     
-   
     <link rel="stylesheet" href="./CSS/estilacos.css" />
     <link rel="stylesheet" href="./CSS/responsive.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <ul class="nav-links">
-                <a href="index.html">
-                    <img src="img/hotel/logo/logo.png" alt="logo del hotel">
-                </a>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Iniciar sesión</a></li>
-                <li><a href="registro.html">Registrate aquí</a></li>
-            </ul>
-        </nav>
-
-        <section class="hero">
-        <div class="hero-overlay"></div>
-
-        <div class="hero-content">
-            <h1>Descansa con lujo y comodidad</h1>
-
-            <p>
-            Vive una experiencia inolvidable en el Hotel Rincón del Carmen.
-            Habitaciones modernas, spa, restaurante y zonas húmedas.
-            </p>
-
-            <a href="reservas.html" class="btn-primary">
-            Reservar ahora
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <img src="img/hotel/logo/logo.png" alt="logo del hotel">
             </a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="reservas.html">Reservas</a>
+                <a href="contacto.html">Contacto</a>
+                <div id="navAuth"></div>
+            </nav>
         </div>
-        </section>
     </header>
 
-
-    <section class="services">
-        <div class="section-title">
-        <h2>Nuestros Servicios</h2>
-        <p>Disfruta de instalaciones diseñadas para tu comodidad.</p>
-        </div>
-
-        <div class="services-container">
-
-        <article class="service-card">
-            <img src="img/comidas/Sushi.jpg" alt="Restaurante" />
-
-            <div class="service-content">
-            <h3>Restaurante Gourmet</h3>
-            <p>
-                Disfruta de platos nacionales e internacionales preparados por chefs expertos.
-            </p>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Descansa con lujo y comodidad</h1>
+                <p>Vive una experiencia inolvidable en el Hotel Rincón del Carmen. Habitaciones modernas, spa, restaurante y zonas húmedas.</p>
+                <a href="reservas.html" class="btn-primary">Reservar ahora</a>
             </div>
-        </article>
+        </section>
 
-        <article class="service-card">
-            <img src="img/spa/Spa.png" alt="Spa" />
+        <section class="section">
+            <div class="container">
+                <div class="mb-3">
+                    <h2>Nuestros Servicios</h2>
+                    <p>Disfruta de instalaciones diseñadas para tu comodidad.</p>
+                </div>
 
-            <div class="service-content">
-            <h3>Spa & Relax</h3>
-            <p>
-                Espacios de relajación con masajes, jacuzzi y tratamientos especiales.
-            </p>
+                <div class="grid grid-3">
+                    <div class="service-card">
+                        <img src="img/comidas/Sushi.jpg" alt="sushi">
+                        <h3>Restaurante Gourmet</h3>
+                        <p>Disfruta de platos nacionales e internacionales preparados por chefs expertos.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="img/spa/Spa.png" alt="spa">
+                        <h3>Spa & Relax</h3>
+                        <p>Espacios de relajación con masajes, jacuzzi y tratamientos especiales.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="img/spa/zonahumeda.png" alt="zonas humedas">
+                        <h3>Zonas Húmedas</h3>
+                        <p>Piscina, sauna y espacios recreativos para disfrutar en familia.</p>
+                    </div>
+                </div>
             </div>
-        </article>
+        </section>
 
-        <article class="service-card">
-            <img src="img/spa/zonahumeda.png" alt="Piscina" />
+        <section class="section">
+            <div class="container">
+                <div class="mb-3">
+                    <span class="badge">Habitaciones Premium</span>
+                    <h2>Habitaciones Destacadas</h2>
+                    <p>Descubre espacios diseñados para el descanso, el lujo y la comodidad absoluta.</p>
+                </div>
 
-            <div class="service-content">
-            <h3>Zonas Húmedas</h3>
-            <p>
-                Piscina, sauna y espacios recreativos para disfrutar en familia.
-            </p>
+                <div class="rooms-container" id="roomsContainer"></div>
             </div>
-        </article>
+        </section>
 
-        </div>
-    </section>
-
-
-
-   <!-- =========================================
-     HABITACIONES DESTACADAS
-========================================= -->
-
-    <section class="rooms section">
-
-        <div class="container">
-
-         <div class="section-title mb-3">
-
-             <span class="badge mb-1">
-                Habitaciones Premium
-                </span>
-
-                <h2>
-                Habitaciones Destacadas
-                </h2>
-
-             <p>
-                Descubre espacios diseñados para el descanso,
-                el lujo y la comodidad absoluta.
-             </p>
-
+        <section class="section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Galería</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">Conoce nuestros espacios y permitete experimentar una estadía de calidad</p>
+                <div class="gallery">
+                    <img src="img/hotel/Superior.png" alt="Hotel" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%231C2541%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23E8B34B%22 font-family=%22Arial%22%3EImagen 1%3C/text%3E%3C/svg%3E'">
+                    <img src="img/hotel/LATERAL.png" alt="Hotel" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%231C2541%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23E8B34B%22 font-family=%22Arial%22%3EImagen 2%3C/text%3E%3C/svg%3E'">
+                    <img src="img/hotel/Hotel del carmen.png" alt="Hotel" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%231C2541%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23E8B34B%22 font-family=%22Arial%22%3EImagen 3%3C/text%3E%3C/svg%3E'">
+                </div>
             </div>
+        </section>
 
-        <!-- CONTENEDOR DINÁMICO -->
-
-            <div
-            class="rooms-container grid grid-3"
-            id="roomsContainer"
-            ></div>
-
-     </div>
-
-    </section>
-
-
-    <section class="gallery">
-        <h2>Galería</h2>
-        <p>Conoce nuestros espacios y permitete experimentar una estadía de calidad</p>
-        <div class="slider">
-            <div class="slides">
-            <img src="img/hotel/Hotel del carmen.png" alt="">
-            <img src="img/hotel/LATERAL.png" alt="">
-            <img src="img/hotel/Superior.png" alt="">
+        <section class="section" style="background: linear-gradient(135deg, #0f1c41 0%, #1C2541 100%);">
+            <div class="container" style="text-align: center;">
+                <h2>¿Listo para reservar?</h2>
+                <p>Vive una experiencia inolvidable con nosotros.</p>
+                <a href="reservas.html" class="btn-primary" style="margin-top: 1rem;">Reservar habitación</a>
             </div>
-        </div>
-    </section>
-
-    </section>
-
-
-    <section class="cta">
-        <div class="cta-content">
-            <h2>¿Listo para reservar?</h2>
-
-            <p>
-                Vive una experiencia inolvidable con nosotros.
-            </p>
-
-            <a href="reservas.html" class="btn-primary">
-                Reservar habitación
-            </a>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
-
-        <div class="footer-container">
-
-            <div>
+        <div class="container">
+            <div style="text-align: center;">
                 <h3>Hotel Rincón del Carmen</h3>
-                <p>
-                Tu mejor experiencia de descanso y comodidad.
-                </p>
+                <p>Tu mejor experiencia de descanso y comodidad.</p>
             </div>
-
-            <div>
-                <h4>Enlaces</h4>
-
-                <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>Email: hotelrincon@gmail.com | Tel: 321 226 0838 | Cúcuta - Colombia</p>
             </div>
-
-
-            <div>
-                <h4>Contacto</h4>
-
-                <p>Email: hotelrincon@gmail.com</p>
-                <p>Tel: 321 226 0838</p>
-                <p>Cúcuta - Colombia</p>
-            </div>
-
         </div>
     </footer>
-<script
-    type="module"
-    src="JS/Components/card-habitacion.js">
-</script>
+
+<script src="JS/storage.js"></script>
+<script src="JS/utils.js"></script>
+<script src="JS/auth.js"></script>
+<script src="JS/data.js"></script>              <!-- CARGA EL JSON -->
+<script src="JS/Components/card-habitacion.js"></script>
+<script src="JS/index.js"></script>  
 </body>
 </html>
-
