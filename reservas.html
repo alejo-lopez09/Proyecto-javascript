@@ -2,55 +2,102 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Reservas | Hotel El Rincón del Carmen</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <!-- Tipografías -->
+    <title>
+        Reservas | Hotel El Rincón del Carmen
+    </title>
+
+    <!-- GOOGLE FONTS -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <!-- CSS -->
-    <link rel="stylesheet" href="CSS/estilacos.css">
-    <link rel="stylesheet" href="CSS/admin.css">
-    <link rel="stylesheet" href="CSS/reservas.css">
+
+    <link rel="stylesheet" href="./CSS/estilacos.css">
     <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="./CSS/reservas.css">
+
 </head>
 
 <body>
 
-    <!-- ======================================================
+    <!-- =========================================
          NAVBAR
-    ======================================================= -->
+    ========================================== -->
 
     <header class="navbar">
 
-        <div class="container navbar-container flex-between">
+        <div class="container navbar-container">
 
-            <a href="index.html" class="logo">
-                <h3>El Rincón del Carmen</h3>
+            <!-- LOGO -->
+
+            <a
+                href="./index.html"
+                class="logo"
+            >
+
+                <img
+                    src="./img/hotel/logo/logo.png"
+                    alt="Logo Hotel"
+                >
+
             </a>
 
+            <!-- LINKS -->
+
             <nav>
+
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="reservas.html">Reservas</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="login.html">Iniciar sesión</a></li>
-                    <li><a href="registro.html">Registrate aquí</a></li>
+
+                    <li>
+                        <a href="./index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./reservas.html">
+                            Reservas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./login.html">
+                            Iniciar sesión
+                        </a>
+                    </li>
+
                 </ul>
+
             </nav>
 
         </div>
 
     </header>
 
-    <!-- ======================================================
-         HERO RESERVAS
-    ======================================================= -->
+    <!-- =========================================
+         HERO
+    ========================================== -->
 
     <section class="booking-hero">
 
@@ -59,15 +106,15 @@
             <div class="booking-hero-content fade-up">
 
                 <span class="badge mb-1">
-                    Reserva tu experiencia
+                    Hotel Premium
                 </span>
 
                 <h1 class="mb-2">
-                    Habitaciones premium para una estadía inolvidable
+                    Reserva una experiencia inolvidable
                 </h1>
 
                 <p class="mb-3">
-                    Consulta disponibilidad, explora nuestras habitaciones y reserva fácilmente desde cualquier dispositivo.
+                    Habitaciones modernas, espacios exclusivos y una experiencia diseñada para el descanso perfecto.
                 </p>
 
             </div>
@@ -76,9 +123,9 @@
 
     </section>
 
-    <!-- ======================================================
-         FORMULARIO DE BÚSQUEDA
-    ======================================================= -->
+    <!-- =========================================
+         BOOKING FORM
+    ========================================== -->
 
     <section class="booking-section">
 
@@ -93,19 +140,19 @@
                     </h2>
 
                     <p>
-                        Selecciona las fechas y la cantidad de huéspedes.
+                        Encuentra la habitación ideal para tu estadía.
                     </p>
 
                 </div>
 
                 <form class="booking-form">
 
-                    <!-- Fecha entrada -->
+                    <!-- CHECKIN -->
 
                     <div class="form-group">
 
                         <label for="checkin">
-                            Fecha de entrada
+                            Fecha entrada
                         </label>
 
                         <input
@@ -117,12 +164,12 @@
 
                     </div>
 
-                    <!-- Fecha salida -->
+                    <!-- CHECKOUT -->
 
                     <div class="form-group">
 
                         <label for="checkout">
-                            Fecha de salida
+                            Fecha salida
                         </label>
 
                         <input
@@ -134,12 +181,12 @@
 
                     </div>
 
-                    <!-- Personas -->
+                    <!-- PERSONAS -->
 
                     <div class="form-group">
 
                         <label for="guests">
-                            Número de personas
+                            Huéspedes
                         </label>
 
                         <select
@@ -176,14 +223,15 @@
 
                     </div>
 
-                    <!-- Botón -->
-                    
-                    
+                    <!-- BOTON -->
+
                     <button
                         type="submit"
                         class="btn btn-primary search-btn"
                     >
-                        Buscar habitaciones
+
+                        Buscar habitación
+
                     </button>
 
                 </form>
@@ -194,351 +242,40 @@
 
     </section>
 
-    <!-- ======================================================
-         RESULTADOS HABITACIONES
-    ======================================================= -->
-
-    <section class="rooms-results section">
+     <section class="rooms section">
 
         <div class="container">
 
-            <div class="section-title mb-3">
+         <div class="section-title mb-3">
 
-                <h2 class="mb-1">
-                    Habitaciones disponibles
+             <span class="badge mb-1">
+                Habitaciones Premium
+                </span>
+
+                <h2>
+                Habitaciones Destacadas
                 </h2>
 
-                <p>
-                    Espacios diseñados para descanso, confort y exclusividad.
-                </p>
+             <p>
+                Descubre espacios diseñados para el descanso,
+                el lujo y la comodidad absoluta.
+             </p>
 
             </div>
 
-            <!-- GRID -->
+        <!-- CONTENEDOR DINÁMICO -->
 
-            <div class="rooms-grid grid grid-3">
+            <div
+            class="rooms-container grid grid-3"
+            id="roomsContainer"
+            ></div>
 
-                <!-- ======================================================
-                     HABITACIÓN 1
-                ======================================================= -->
-
-                <article class="room-card">
-
-                    <img
-                        src="img/habitaciones/Gemini_Generated_Image_coh4xzcoh4xzcoh4.png"
-                        alt="Habitación Deluxe"
-                    >
-
-                    <div class="room-card-content">
-
-                        <div class="room-top flex-between mb-2">
-
-                            <h3>
-                                Habitación Deluxe
-                            </h3>
-
-                            <span class="badge">
-                                Disponible
-                            </span>
-
-                        </div>
-
-                        <p class="mb-2">
-                            Elegancia y comodidad con una vista relajante y acabados premium.
-                        </p>
-
-                        <!-- Servicios -->
-
-                        <div class="room-services mb-2">
-
-                            <span class="service-tag">
-                                WiFi
-                            </span>
-
-                            <span class="service-tag">
-                                Minibar
-                            </span>
-
-                            <span class="service-tag">
-                                Jacuzzi
-                            </span>
-
-                            <span class="service-tag">
-                                Smart TV
-                            </span>
-
-                        </div>
-
-                        <!-- Datos -->
-
-                        <div class="room-info mb-2">
-
-                            <div class="info-item">
-                                <strong>
-                                    Camas:
-                                </strong>
-                                2
-                            </div>
-
-                            <div class="info-item">
-                                <strong>
-                                    Personas:
-                                </strong>
-                                4
-                            </div>
-
-                            <div class="info-item">
-                                <strong>
-                                    Fechas:
-                                </strong>
-                                Disponible
-                            </div>
-
-                        </div>
-
-                        <!-- Precio -->
-
-                        <div class="room-bottom flex-between">
-
-                            <div>
-
-                                <small>
-                                    Desde
-                                </small>
-
-                                <h3 class="price-highlight">
-                                    $320.000
-                                </h3>
-
-                                <small>
-                                    por noche
-                                </small>
-
-                            </div>
-                        
-                            <button class="btn btn-primary">
-                                Reservar
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-                <!-- ======================================================
-                     HABITACIÓN 2
-                ======================================================= -->
-
-                <article class="room-card">
-
-                    <img
-                        src="img/habitaciones/Suite.png"
-                        alt="Suite Premium"
-                    >
-
-                    <div class="room-card-content">
-
-                        <div class="room-top flex-between mb-2">
-
-                            <h3>
-                                Suite Premium
-                            </h3>
-
-                            <span class="badge">
-                                Disponible
-                            </span>
-
-                        </div>
-
-                        <p class="mb-2">
-                            Suite espaciosa con acabados modernos y experiencia de lujo.
-                        </p>
-
-                        <div class="room-services mb-2">
-
-                            <span class="service-tag">
-                                WiFi
-                            </span>
-
-                            <span class="service-tag">
-                                Jacuzzi
-                            </span>
-
-                            <span class="service-tag">
-                                Balcón
-                            </span>
-
-                            <span class="service-tag">
-                                Room Service
-                            </span>
-
-                        </div>
-
-                        <div class="room-info mb-2">
-
-                            <div class="info-item">
-                                <strong>
-                                    Camas:
-                                </strong>
-                                3
-                            </div>
-
-                            <div class="info-item">
-                                <strong>
-                                    Personas:
-                                </strong>
-                                5
-                            </div>
-
-                            <div class="info-item">
-                                <strong>
-                                    Fechas:
-                                </strong>
-                                Disponible
-                            </div>
-
-                        </div>
-
-                        <div class="room-bottom flex-between">
-
-                            <div>
-
-                                <small>
-                                    Desde
-                                </small>
-
-                                <h3 class="price-highlight">
-                                    $480.000
-                                </h3>
-
-                                <small>
-                                    por noche
-                                </small>
-
-                            </div>
-
-                            <button class="btn btn-primary">
-                                Reservar
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-                <!-- ======================================================
-                     HABITACIÓN 3
-                ======================================================= -->
-
-                <article class="room-card">
-
-                    <img
-                        src="img/habitaciones/Habitacion familiar.png"
-                        alt="Habitación Familiar"
-                    >
-
-                    <div class="room-card-content">
-
-                        <div class="room-top flex-between mb-2">
-
-                            <h3>
-                                Habitación Familiar
-                            </h3>
-
-                            <span class="badge">
-                                Disponible
-                            </span>
-
-                        </div>
-
-                        <p class="mb-2">
-                            Ideal para grupos y familias que buscan comodidad y tranquilidad.
-                        </p>
-
-                        <div class="room-services mb-2">
-
-                            <span class="service-tag">
-                                WiFi
-                            </span>
-
-                            <span class="service-tag">
-                                TV
-                            </span>
-
-                            <span class="service-tag">
-                                Desayuno
-                            </span>
-
-                            <span class="service-tag">
-                                Aire acondicionado
-                            </span>
-
-                        </div>
-
-                        <div class="room-info mb-2">
-
-                            <div class="info-item">
-                                <strong>
-                                    Camas:
-                                </strong>
-                                4
-                            </div>
-
-                            <div class="info-item">
-                                <strong>
-                                    Personas:
-                                </strong>
-                                6
-                            </div>
-
-                            <div class="info-item">
-                                <strong>
-                                    Fechas:
-                                </strong>
-                                Disponible
-                            </div>
-
-                        </div>
-
-                        <div class="room-bottom flex-between">
-
-                            <div>
-
-                                <small>
-                                    Desde
-                                </small>
-
-                                <h3 class="price-highlight">
-                                    $540.000
-                                </h3>
-
-                                <small>
-                                    por noche
-                                </small>
-
-                            </div>
-
-                            <button class="btn btn-primary">
-                                Reservar
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </div>
+     </div>
 
     </section>
-
-    <!-- ======================================================
+    <!-- =========================================
          FOOTER
-    ======================================================= -->
+    ========================================== -->
 
     <footer class="footer">
 
@@ -546,7 +283,7 @@
 
             <div class="grid grid-3">
 
-                <!-- Marca -->
+                <!-- MARCA -->
 
                 <div>
 
@@ -555,12 +292,12 @@
                     </h3>
 
                     <p>
-                        Experiencias premium, descanso y comodidad en un ambiente elegante y acogedor.
+                        Un espacio premium pensado para descanso, confort y exclusividad.
                     </p>
 
                 </div>
 
-                <!-- Navegación -->
+                <!-- LINKS -->
 
                 <div>
 
@@ -571,19 +308,19 @@
                     <ul class="footer-links">
 
                         <li>
-                            <a href="index.html">
+                            <a href="./index.html">
                                 Inicio
                             </a>
                         </li>
 
                         <li>
-                            <a href="reservas.html">
+                            <a href="./reservas.html">
                                 Reservas
                             </a>
                         </li>
 
                         <li>
-                            <a href="contacto.html">
+                            <a href="./contacto.html">
                                 Contacto
                             </a>
                         </li>
@@ -592,7 +329,7 @@
 
                 </div>
 
-                <!-- Contacto -->
+                <!-- CONTACT -->
 
                 <div>
 
@@ -619,7 +356,8 @@
             <div class="footer-bottom">
 
                 <p>
-                    © 2026 Hotel El Rincón del Carmen. Todos los derechos reservados.
+                    © 2026 Hotel El Rincón del Carmen.
+                    Todos los derechos reservados.
                 </p>
 
             </div>
@@ -630,8 +368,8 @@
 
     <!-- JS -->
 
-    <script src="./js/reservas.js"></script>
-
+    <script src="./JS/reservas.js"></script>
+    <script src="JS/Components/card-habitacion.js"></script>
 </body>
 
 </html>
