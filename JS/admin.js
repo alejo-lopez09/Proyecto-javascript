@@ -6,20 +6,19 @@ const Admin = {
   addRoom(roomData) {
     return Storage.addRoom(roomData);
   },
-
   deleteRoom(roomId) {
     Storage.deleteRoom(roomId);
   },
-
+  updateRoom(room) {
+    Storage.updateRoom(room);
+  },
   getRooms() {
     return Storage.getRooms();
   },
-
   getReservations() {
     return Storage.getReservations();
   },
-
   cancelReservation(reservationId) {
-    Storage.deleteReservation(reservationId);
+    Storage.cancelReservation(reservationId);
   }
 };

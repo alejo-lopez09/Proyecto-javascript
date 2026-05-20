@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reservas - Hotel Rincón del Carmen</title>
     
-    <link rel="stylesheet" href="./CSS/estilacos.css" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <link rel="stylesheet" href="./CSS/reservas.css" />
     <link rel="stylesheet" href="./CSS/responsive.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,7 @@
     <header class="navbar">
         <div class="container navbar-container">
             <a href="index.html" class="logo">
-                <img src="img/hotel/logo.png" alt="logo del hotel">
+                <img src="img/hotel/logo/logo.png" alt="logo del hotel">
             </a>
             <nav class="nav-links">
                 <a href="index.html">Inicio</a>
@@ -44,7 +45,7 @@
                     </div>
                     <div class="form-group">
                         <label for="people">Cantidad de Personas</label>
-                        <input type="number" id="people" class="input" min="1" max="10" value="1" required>
+                        <input type="number" id="people" class="input" min="1" max="20" value="1" required>
                     </div>
                 </div>
                 <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Buscar Disponibilidad</button>
@@ -74,8 +75,9 @@
 <script src="JS/storage.js"></script>
 <script src="JS/utils.js"></script>
 <script src="JS/auth.js"></script>
-<script src="JS/data.js"></script>              <!-- CARGA EL JSON -->
+<script src="JS/data.js"></script>
 <script src="JS/Components/card-habitacion.js"></script>
-<script src="JS/index.js"></script>  
+<script src="JS/reservaciones.js"></script>
+<script src="JS/reservas.js"></script>
 </body>
 </html>

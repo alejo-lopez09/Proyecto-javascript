@@ -3,7 +3,6 @@
 // ============================================
 
 const Reservations = {
-  // Verificar disponibilidad
   checkAvailability(roomId, checkIn, checkOut) {
     const reservations = Storage.getReservations();
     const checkInDate = new Date(checkIn);
@@ -17,7 +16,6 @@ const Reservations = {
     });
   },
 
-  // Crear reserva
   createReservation(roomId, checkIn, checkOut, people) {
     if (!Auth.isLoggedIn()) {
       Utils.showNotification('Debes iniciar sesión para reservar', 'error');
@@ -36,8 +34,9 @@ const Reservations = {
       return null;
     }
 
+    // Verificar disponibilidad justo antes de confirmar (evita solapamiento)
     if (!this.checkAvailability(roomId, checkIn, checkOut)) {
-      Utils.showNotification('La habitación no está disponible en esas fechas', 'error');
+      Utils.showNotification('La habitación ya no está disponible en esas fechas', 'error');
       return null;
     }
 
@@ -59,9 +58,8 @@ const Reservations = {
     return Storage.addReservation(reservation);
   },
 
-  // Cancelar reserva
   cancelReservation(reservationId) {
-    Storage.deleteReservation(reservationId);
+    Storage.cancelReservation(reservationId);
     Utils.showNotification('Reserva cancelada correctamente', 'success');
   }
 };

@@ -5,12 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotel Rincón del Carmen</title>
     
-    <link rel="stylesheet" href="./CSS/estilacos.css" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
     <link rel="stylesheet" href="./CSS/responsive.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Carrusel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+        .carousel-caption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(12,20,50,0.85));
+            color: #fff;
+            padding: 1.5rem 2rem;
+        }
+        .carousel-caption h3 { margin: 0 0 0.25rem; font-size: 1.4rem; }
+        .carousel-caption p  { margin: 0; font-size: 0.95rem; opacity: 0.85; }
+        .carousel-btn {
+            position: absolute;
+            top: 50%; transform: translateY(-50%);
+            background: rgba(232,179,75,0.85);
+            border: none; color: #0f1c41;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.2s;
+        }
+        .carousel-btn:hover { background: #E8B34B; }
+        .carousel-btn.prev { left: 12px; }
+        .carousel-btn.next { right: 12px; }
+        .carousel-dots {
+            display: flex; justify-content: center; gap: 8px;
+            margin-top: 12px;
+        }
+        .dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: rgba(232,179,75,0.35);
+            cursor: pointer; transition: background 0.2s;
+        }
+        .dot.active { background: #E8B34B; }
+    </style>
 </head>
 <body>
     <header class="navbar">
@@ -36,26 +96,62 @@
             </div>
         </section>
 
+        <!-- CARRUSEL DE HABITACIONES -->
+        <section class="section">
+            <div class="container">
+                <div class="mb-3">
+                    <span class="badge">Habitaciones Premium</span>
+                    <h2>Nuestras Habitaciones</h2>
+                    <p>Descubre espacios diseñados para el descanso, el lujo y la comodidad absoluta.</p>
+                </div>
+                <div class="carousel" id="roomCarousel">
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)" aria-label="Anterior">&#8249;</button>
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <img src="img/habitaciones/Habitacion_Deluxe.png" alt="Habitación Deluxe">
+                            <div class="carousel-caption">
+                                <h3>Habitación Deluxe</h3>
+                                <p>WiFi · Minibar · Jacuzzi · Smart TV — $320.000/noche</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="img/habitaciones/Suite.png" alt="Suite Premium">
+                            <div class="carousel-caption">
+                                <h3>Suite Premium</h3>
+                                <p>WiFi · Jacuzzi · Minibar — $620.000/noche</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="img/habitaciones/Habitacion_familiar.png" alt="Habitación Familiar">
+                            <div class="carousel-caption">
+                                <h3>Habitación Familiar</h3>
+                                <p>WiFi · Jacuzzi · Minibar · hasta 5 personas — $440.000/noche</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel(1)" aria-label="Siguiente">&#8250;</button>
+                </div>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
                 <div class="mb-3">
                     <h2>Nuestros Servicios</h2>
                     <p>Disfruta de instalaciones diseñadas para tu comodidad.</p>
                 </div>
-
                 <div class="grid grid-3">
                     <div class="service-card">
                         <img src="img/comidas/Sushi.jpg" alt="sushi">
                         <h3>Restaurante Gourmet</h3>
                         <p>Disfruta de platos nacionales e internacionales preparados por chefs expertos.</p>
                     </div>
-
                     <div class="service-card">
                         <img src="img/spa/Spa.png" alt="spa">
                         <h3>Spa & Relax</h3>
                         <p>Espacios de relajación con masajes, jacuzzi y tratamientos especiales.</p>
                     </div>
-
                     <div class="service-card">
                         <img src="img/spa/zonahumeda.png" alt="zonas humedas">
                         <h3>Zonas Húmedas</h3>
@@ -67,24 +163,12 @@
 
         <section class="section">
             <div class="container">
-                <div class="mb-3">
-                    <span class="badge">Habitaciones Premium</span>
-                    <h2>Habitaciones Destacadas</h2>
-                    <p>Descubre espacios diseñados para el descanso, el lujo y la comodidad absoluta.</p>
-                </div>
-
-                <div class="rooms-container" id="roomsContainer"></div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 2rem;">Galería</h2>
-                <p style="text-align: center; margin-bottom: 2rem;">Conoce nuestros espacios y permitete experimentar una estadía de calidad</p>
+                <h2 style="text-align:center;margin-bottom:2rem;">Galería</h2>
+                <p style="text-align:center;margin-bottom:2rem;">Conoce nuestros espacios y permítete experimentar una estadía de calidad</p>
                 <div class="gallery">
-                    <img src="img/hotel/Superior.png" alt="Hotel" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%231C2541%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23E8B34B%22 font-family=%22Arial%22%3EImagen 1%3C/text%3E%3C/svg%3E'">
-                    <img src="img/hotel/LATERAL.png" alt="Hotel" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%231C2541%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23E8B34B%22 font-family=%22Arial%22%3EImagen 2%3C/text%3E%3C/svg%3E'">
-                    <img src="img/hotel/Hotel del carmen.png" alt="Hotel" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%231C2541%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23E8B34B%22 font-family=%22Arial%22%3EImagen 3%3C/text%3E%3C/svg%3E'">
+                    <img src="img/hotel/Superior.png" alt="Hotel Superior" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%221C2541%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23E8B34B%22 font-family=%22Arial%22%3EHotel%3C/text%3E%3C/svg%3E'">
+                    <img src="img/hotel/LATERAL.png" alt="Hotel Lateral" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%221C2541%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23E8B34B%22 font-family=%22Arial%22%3ELateral%3C/text%3E%3C/svg%3E'">
+                    <img src="img/hotel/Hotel del carmen.png" alt="Hotel del Carmen" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%221C2541%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23E8B34B%22 font-family=%22Arial%22%3EHotel del Carmen%3C/text%3E%3C/svg%3E'">
                 </div>
             </div>
         </section>
@@ -113,8 +197,39 @@
 <script src="JS/storage.js"></script>
 <script src="JS/utils.js"></script>
 <script src="JS/auth.js"></script>
-<script src="JS/data.js"></script>              <!-- CARGA EL JSON -->
+<script src="JS/data.js"></script>
 <script src="JS/Components/card-habitacion.js"></script>
-<script src="JS/index.js"></script>  
+<script src="JS/index.js"></script>
+<script>
+  // Carrusel
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dotsContainer = document.getElementById('carouselDots');
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+  });
+
+  function updateCarousel() {
+    document.getElementById('carouselTrack').style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+
+  function moveCarousel(dir) {
+    currentSlide = (currentSlide + dir + slides.length) % slides.length;
+    updateCarousel();
+  }
+
+  function goToSlide(i) {
+    currentSlide = i;
+    updateCarousel();
+  }
+
+  // Auto-play cada 4 segundos
+  setInterval(() => moveCarousel(1), 4000);
+</script>
 </body>
 </html>
