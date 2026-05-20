@@ -1,202 +1,159 @@
-Hotel El Rincón del Carmen
+# Hotel Rincón del Carmen
 
-Sistema web de gestión hotelera desarrollado como proyecto académico, enfocado en la administración de habitaciones, reservas y usuarios mediante una interfaz moderna, responsive y fácil de usar.
+Proyecto web para la gestión y visualización de un hotel, desarrollado con HTML, CSS y JavaScript. La aplicación permite visualizar habitaciones, registrarse, iniciar sesión y realizar reservas desde una interfaz moderna y responsive.
 
-El proyecto fue construido utilizando únicamente tecnologías frontend, manejando persistencia de datos con LocalStorage y archivos JSON simulando una base de datos inicial.
+---
 
-Descripción del proyecto
+## Descripción del proyecto
 
-El sistema permite:
+**Hotel Rincón del Carmen** es una aplicación web enfocada en la experiencia de reservas de un hotel. El proyecto cuenta con diferentes vistas para usuarios y administradores, además de almacenamiento local mediante archivos JSON y LocalStorage.
 
-Visualizar habitaciones disponibles.
-Consultar disponibilidad según fechas.
-Realizar reservas.
-Gestionar habitaciones desde un panel administrativo.
-Administrar reservas activas.
-Simular persistencia de datos sin necesidad de backend.
+El objetivo principal es ofrecer una plataforma sencilla donde los usuarios puedan:
 
-Todo el proyecto fue diseñado bajo una estética elegante inspirada en hoteles premium, utilizando una paleta basada en tonos azul medianoche y dorado.
+- Visualizar habitaciones disponibles.
+- Registrarse e iniciar sesión.
+- Realizar reservas.
+- Navegar por diferentes secciones del hotel.
+- Gestionar información desde un panel administrativo.
 
-Porque claramente los humanos decidieron que un hotel necesita verse “lujoso” aunque el backend esté sostenido con cinta pegante y fe. Igual quedó bacano.
+---
 
-Tecnologías utilizadas
-Frontend
-HTML5
-CSS3
-JavaScript Vanilla
-Persistencia de datos
-LocalStorage
-Archivos JSON
-Herramientas
-Visual Studio Code
-Live Server
-Estructura del proyecto
-PROYECTO_JAVASCRIPT/
+## Tecnologías utilizadas
+
+- **HTML5**
+- **CSS3**
+- **JavaScript (Vanilla JS)**
+- **LocalStorage**
+- **JSON** para almacenamiento de datos
+- **Google Fonts**
+
+---
+
+## Estructura del proyecto
+
+```bash
+Hotel_Rincon_DelCarmen/
+│
+├── index.html
+├── login.html
+├── reservas.html
+├── admin.html
+├── contacto.html
 │
 ├── CSS/
-│   ├── admin.css
-│   ├── estilacos.css
+│   ├── responsive.css
 │   ├── reservas.css
-│   └── responsive.css
+│   ├── admin.css
+│   └── estilacos.css
 │
 ├── JS/
-│   ├── auth.js
-│   ├── habitaciones.js
+│   ├── index.js
+│   ├── login.js
 │   ├── reservas.js
-│   ├── storage.js
-│   └── ui.js
+│   ├── registro.js
+│   ├── utils.js
+│   └── Components/
+│       └── card-habitacion.js
 │
 ├── data/
 │   ├── habitaciones.json
 │   ├── reservas.json
 │   └── usuarios.json
 │
-├── img/
-│   ├── habitaciones/
-│   ├── hotel/
-│   └── logo/
-│
-├── admin.html
-├── contacto.html
-├── index.html
-├── login.html
-├── registro.html
-└── reservas.html
-Funcionamiento general
-Inicialización de datos
+└── img/
+    ├── habitaciones/
+    ├── comidas/
+    ├── spa/
+    └── hotel/
+```
 
-La primera vez que se ejecuta el proyecto, los archivos JSON son cargados automáticamente al LocalStorage.
+---
 
-A partir de ese momento:
+## Funcionalidades principales
 
-LocalStorage actúa como la base de datos principal.
+### Usuarios
 
-Los JSON funcionan únicamente como datos iniciales.
+- Registro de usuarios.
+- Inicio de sesión.
+- Visualización de habitaciones.
+- Reservas de habitaciones.
+- Navegación responsive.
+- Interfaz moderna y dinámica.
 
-Sistema de habitaciones
+### Administración
 
-Las habitaciones son almacenadas con:
+- Panel administrativo.
+- Gestión de reservas.
+- Gestión de usuarios.
+- Visualización de información almacenada.
 
-ID
-Nombre
-Precio
-Capacidad
-Número de camas
-Servicios
-Imagen
+---
 
-Ejemplo:
+## Cómo ejecutar el proyecto
 
-{
-  "id": 1,
-  "nombre": "Habitación Deluxe",
-  "precio": 320000,
-  "personas": 2,
-  "camas": 1
-}
-Sistema de reservas
+### Opción 1: Abrir directamente
 
-Cada reserva contiene:
+1. Descargar o clonar el repositorio.
+2. Abrir la carpeta del proyecto.
+3. Ejecutar el archivo `index.html` en el navegador.
 
-ID de reserva
-Usuario asociado
-Habitación reservada
-Fecha de entrada
-Fecha de salida
-Número de personas
-Estado
+### Opción 2: Usar Live Server (recomendado)
 
-El sistema valida disponibilidad evitando cruces de fechas entre reservas.
+1. Abrir el proyecto en Visual Studio Code.
+2. Instalar la extensión **Live Server**.
+3. Hacer clic derecho en `index.html`.
+4. Seleccionar **Open with Live Server**.
 
-Panel administrativo
+---
 
-El administrador puede:
+## Manejo de datos
 
-Crear habitaciones
-Editar habitaciones
-Eliminar habitaciones
-Visualizar estadísticas
-Gestionar reservas
+El proyecto utiliza:
 
-Todo desde una interfaz centralizada.
+- **Archivos JSON** para simular una base de datos.
+- **LocalStorage** para mantener sesiones e información temporal del usuario.
 
-Porque abrir veinte páginas distintas para administrar un hotel es una idea brillante inventada por gente que claramente odia la felicidad.
+Archivos principales de datos:
 
-Diseño visual
+- `habitaciones.json`
+- `usuarios.json`
+- `reservas.json`
 
-La interfaz fue desarrollada siguiendo principios de diseño modernos:
+---
 
-Glassmorphism
-Diseño responsive
-Animaciones suaves
-Tipografía elegante
-Tarjetas dinámicas
-Navbar fijo
-Hero sections con imágenes
-Responsividad
+## Diseño responsive
 
-El proyecto se adapta a:
+La aplicación cuenta con estilos adaptables para diferentes tamaños de pantalla mediante:
 
-Computadores
-Tablets
-Dispositivos móviles
+- Media queries.
+- Diseño flexible.
+- Navegación responsive.
 
-Utilizando:
+Archivo principal:
 
-Flexbox
-CSS Grid
-Media Queries
-Cómo ejecutar el proyecto
-1. Clonar el repositorio
-git clone URL_DEL_REPOSITORIO
-2. Abrir el proyecto en Visual Studio Code
-3. Ejecutar con Live Server
+```bash
+CSS/responsive.css
+```
 
-Se recomienda usar la extensión:
+---
 
-Live Server
+## Posibles mejoras futuras
 
-Debido a que el proyecto utiliza fetch() para cargar archivos JSON.
+- Integración con backend y base de datos real.
+- Sistema de pagos.
+- Confirmación de reservas por correo.
+- Panel administrativo más avanzado.
+- Sistema de disponibilidad en tiempo real.
+- Autenticación segura con JWT.
 
-Abrir los archivos HTML directamente con:
+---
 
-file:///
+## Autor
 
-puede generar errores de CORS.
+Proyecto desarrollado como práctica académica y de desarrollo web.
 
-Gracias navegadores modernos. Siempre encontrando nuevas formas de complicar una página que literalmente solo quiere leer un JSON.
+---
 
-Características principales
-Sistema dinámico de habitaciones
-Reservas con validación
-Persistencia en LocalStorage
-Panel administrativo
-Interfaz moderna
-Diseño responsive
-Arquitectura modular en JavaScript
-Mejoras futuras
-Integración con backend real
-Base de datos SQL
-Sistema de autenticación seguro
-Roles de usuario
-Pasarela de pagos
-Dashboard avanzado
-Reportes estadísticos
-Autores
-Alejandro López
+## Licencia
 
-Desarrollo frontend, estructura visual y lógica principal.
-
-Jhonatan Rueda
-
-Apoyo en desarrollo, estructura y pruebas del sistema.
-
-Estado del proyecto
-
-Proyecto académico funcional en desarrollo.
-
-Actualmente cuenta con la estructura principal operativa y una arquitectura preparada para futuras mejoras.
-
-Licencia
-
-Proyecto desarrollado con fines educativos.
+Este proyecto es de uso educativo y académico.
